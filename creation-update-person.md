@@ -1,12 +1,18 @@
+---
+cover: >-
+  https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwxMHx8cGVyc29uJTIwdGVjaG5vbG9neXxlbnwwfHx8fDE2NzU5ODM0NTA&ixlib=rb-4.0.3&q=80
+coverY: 0
+---
 
-## CREACIÓN / ACTUALIZACIÓN DE CLIENTES PERSONA FÍSICA
+# CREACIÓN / ACTUALIZACIÓN DE CLIENTES PERSONA FÍSICA
 
 Para poder crear clientes en el core de la entidad financiera, es necesario que la entidad cliente desarrolle un servicio que permita enviar toda la información tomada desde la aplicación de Clients Inspector hacia el core. El servicio que provea la entidad, deberá retornar el número de cliente que asigna el core. En caso de que el cliente ya exista en el core, deberá ser capaz de actualizar dicha información con la información enviada desde Clients Inspector.
 
-### Especificaciones
+## Especificaciones
 
 **URL del servicio:**
-```bash 
+
+```bash
 https://{URLCLIENTE}/core_customer
 ```
 
@@ -14,131 +20,125 @@ https://{URLCLIENTE}/core_customer
 
 **Tipo de Autenticación:** Basic Authentication (Autenticación Básica). Por seguridad, ell servicio que tendrá que crear el equipo de TI de la entidad deberá ser capaz de manejar este tipo de autenticación para que nos provea unas credenciales de acceso al servicio.
 
-**Parámetros de Entrada:** Dividiremos la estructura del JSON (llave-valor) en tres  niveles: nivel 1, nivel 2 y nivel 3, dependiendo del tipo de información que provea los nodos de nivel 2. Los nodos de nivel 1 serán los siguientes:
+**Parámetros de Entrada:** Dividiremos la estructura del JSON (llave-valor) en tres niveles: nivel 1, nivel 2 y nivel 3, dependiendo del tipo de información que provea los nodos de nivel 2. Los nodos de nivel 1 serán los siguientes:
 
-* **client_info:** Indicará la información personal del cliente a ser creado: nombres, apellidos, número de documentos, etc.
-
-* **client_location:** Datos de vivienda del cliente.
-
-* **client_contact:** Datos de contacto del cliente.
-
-* **client_job_info:** Datos laborales del cliente.
-
-* **client_references:** Referencias bancarias y personales. Las referencias bancarias son opcionales.
-
-* **client_transactionality:** Datos de transaccionalidad del cliente.
-
-* **client_entity_branch:** Información de la sucursal de la entidad donde el cliente se está registrando.
+* **client\_info:** Indicará la información personal del cliente a ser creado: nombres, apellidos, número de documentos, etc.
+* **client\_location:** Datos de vivienda del cliente.
+* **client\_contact:** Datos de contacto del cliente.
+* **client\_job\_info:** Datos laborales del cliente.
+* **client\_references:** Referencias bancarias y personales. Las referencias bancarias son opcionales.
+* **client\_transactionality:** Datos de transaccionalidad del cliente.
+* **client\_entity\_branch:** Información de la sucursal de la entidad donde el cliente se está registrando.
 
 A continuación la descripción de cada campo:
 
-|NIVEL 1|NIVEL 2|NIVEL 3|TIPO|TAMAÑO|DESCRIPCIÓN|
-|:----|:----|:----|:----|:----|:----|
-|client_info      |first_name*               |                            |varchar  | 30 |Primer nombre del cliente|
-|                 |middle_name               |                            |varchar  | 30 |Segundo nombre del cliente|
-|                 |last_name*                |                            |varchar  | 30 |Primer apellido del cliente|
-|                 |middle_last_name          |                            |varchar  | 30 |Segundo Nombre|
-|                 |sex*                      |                            |varchar  | 1  |Género: M / F|
-|                 |birth_date*               |                            |Date     | -  |Fecha de Nacimiento. Formato YYYY-MM-DD|
-|                 |civil_status_id*          |                            |Integer  | -  |Código de estado civil. Ver Anexo 1|
-|                 |civil_status_description  |                            |varchar  | 50 |Descripción del estado civil|
-|                 |nationality_code          |                            |varchar  | 2  |Código de país de la nacionalidad en Alpha-2. Ejemplo: DO, IT, CO, etc. Ver Anexo 1|
-|                 |other_nationality_code    |                            |varchar  | 2  |Código de país de segunda nacionalidad en Alpha-2|
-|                 |document_type_code*       |                            |varchar  | 4  |Tipo de documento: CEDU, PASA, RNC, RNCE, LCD, NSS. Anexo 1|
-|                 |document_number*          |                            |varchar  | 15 |Número de documento principal|
-|                 |issuing_country_code*     |                            |varchar  | 2  |Código del país emisor del documento principal|
-|                 |other_document_type_code  |                            |varchar  | 4  |Tipo del documento secundario|
-|                 |other_document_number     |                            |varchar  | 15 |Número de documento secundario|
-|                 |other_issuing_country_code|                            |varchar  | 2  |País emisor del documento secundario|
-|                 |person_type_code          |                            |varchar  | 10 |Indica si la persona es PEP o RPEP. En caso de que no, el valor es vacío|
-|                 |spouse_info               |first_name                  |varchar  | 30 |Primer nombre del cónyuge|
-|                 |                          |middle_name                 |varchar  | 30 |Segundo nombre del cónyuge|
-|                 |                          |last_name                   |varchar  | 30 |Apellido del cónyuge|
-|                 |                          |middle_last_name            |varchar  | 30 |Segundo apellido del cónyuge|
-|                 |                          |document_type_code          |varchar  | 4  |Tipo de documento|
-|                 |                          |document_number             |varchar  | 15 |Número de documento|
-|                 |                          |issuing_country_code        |varchar  | 2  | País emisor del documento|
-|                 |immigration_status        |unique_name                 |varchar  | 50 |Identificador único del estatus migratorio: work_permit, holidays, resident. Ver Anexo 1|
-|                 |                          |description                 |varchar  | 50 |Descripción del estatus migratorio: Permiso de trabajo, Vacaciones, Residente.|
-|                 |additional_field1         |                            |varchar  | 150|Campo opcional para almacenar lo que indique el cliente. Este campo solo se agrega en la estructura si es un valor válido. Es decir, sólo se agregará en el JSON si existe valor, de lo contrario no.|
-|                 |additional_field2         |                            |varchar  | 150|Campo opcional para almacenar lo que indique el cliente. Este campo solo se agrega en la estructura si es un valor válido.Es decir, sólo se agregará en el JSON si existe valor, de lo contrario no.|
-|                 |additional_field3         |                            |varchar  | 150|Campo opcional para almacenar lo que indique el cliente. Este campo solo se agrega en la estructura si es un valor válido. Es decir, sólo se agregará en el JSON si existe valor, de lo contrario no.|
-|                 |related_accounts          |                            |Array    | |Este campo comprende una lista de objetos. Cada objeto contiene la información de la cuenta existente en el CORE bancario a la cual se va a vincular al solicitante.   Este campo puede venir como una lista vaciá, en caso de no aplicar|
-|                 |                          |account_link_type_code      |varchar  | 1  |Código del tipo de vinculación del cliente.   Descripción de los valores en la tabla 1.1|
-|                 |                          |authorized_signature        |boolean  |    |Valor booleano que indica si el cliente es firma autorizada de la cuenta a  vincular.|
-|                 |                          |related_account_number      |varchar  | 20 |Número de cuenta a vincular al cliente.|
-|                 |product_request_type      |                            |Object   |    |Diccionario que contiene la información referente al tipo de solicitud que se esta realizando. Los tipos de solicitudes son especificados en la tabla 1.2|
-|                 |                          |description                 |varchar  | 50 |Título del tipo de solicitud.|
-|                 |                          |code                        |varchar  | 1  |Código del tipo de solicitud.|
-|client_location  |city_description*         |                            |varchar  | 30 |Nombre de la ciudad de residencia|
-|                 |province_code*            |                            |varchar  | 4  |Código de provincia. Ver Anexo 1|
-|                 |province_description*     |                            |varchar  | 70 |Nombre de la provincia|
-|                 |country_description*      |                            |varchar  | 20 |Nombre del país de residencia|
-|                 |locality_code*            |                            |varchar  | 6  |Código de localidad.|
-|                 |locality_description*     |                            |varchar  | 70 |Nombre de la localidad|
-|                 |country_code*             |                            |varchar  | 2  |Código de país Alpha-2|
-|                 |address*                  |                            |varchar  | 100|Dirección de domicilio|
-|                 |neighbourhood_description |                            |varchar  | 100|Nombre del Sector|
-|                 |housing_type              |                            |varchar  | 50 |Tipo de vivienda. Los valores que toma son: Propia y Alquilada.|
-|                 |rent_amount               |                            |float    | -  |Monto de alquiler en caso de que el tipo de vivienda es alquilada. Puede ser null.|
-|                 |owner                     |                            |varchar  | 80 |Nombre del propietario (caso alquilado)|
-|                 |owner_phone               |                            |varchar  | 30 |Número de teléfono del propietario (caso alquilado)|
-|                 |postal_code               |                            |varchar  | 10 |Código postal|
-|client_contact   |email*                    |                            |varchar  | 50 |Correo electrónico|
-|                 |cell_phone*               |                            |varchar  | 20 |Número de teléfono celular|
-|                 |home_phone                |                            |varchar  | 20 |Número de teléfono de casa|
-|                 |buss_phone                |                            |varchar  | 20 |Número de teléfono de oficina|
-|                 |fax                       |                            |varchar  | 20 |Fax|
-|                 |social_network_name       |                            |varchar  | 45 |Nombre de red social|
-|                 |social_network_username   |                            |varchar  | 30 |Usuario de red social|
-|client_job_info  |salary*                   |                            |float    | -  |Monto de salario|
-|                 |net_income*               |                            |float    | -  |Ganancia Neta|
-|                 |currency_code*            |                            |varchar  | 4  |Código de moneda. Ver Anexo 1|
-|                 |work_address*             |                            |varchar  | 150|Dirección de trabajo|
-|                 |ciiu*                     |                            |varchar  | 6  |Código de la ocupación|
-|                 |company_name              |                            |varchar  |100 |Nombre de la compañía donde labora el cliente|
-|                 |other_job_info            |ciiu                        |varchar  | 6  |Código de la actividad comercial adicional. Esta información proviene las actividades cargadas en la herramienta GIR.|
-|                 |                          |country_code                |varchar  | 2  |País de negocio|
-|                 |                          |quantity_of_employees       |integer  | -  |Cantidad de empleados|
-|                 |                          |total_assets                |Float    | -  |Monto total de los activos|
-|                 |                          |income_in_another_currency  |Float    | -  |Ingresos en otra moneda expresado en USD. Por defecto es 0.|
-|                 |                          |origin_income               |varchar  | 100|Origen de los ingresos. Por defecto retorna null.|
-|client_references|first_bank_reference      |country_code                |varchar  | 2  |Código de país en Alpha-2.|
-|                 |                          |bank_name                   |varchar  | 50 |Nombre del banco|
-|                 |                          |acount_type_description     |varchar  | 50 |Tipo de cuenta|
-|                 |                          |account_number              |varchar  | 50 |Número de cuenta|
-|                 |                          |officer                     |varchar  | 100|Nombre de oficial responsable|
-|                 |second_bank_reference     |country_code                |varchar  | 2  |Código de país en Alpha-2.|
-|                 |                          |bank_description            |varchar  | 50 |Nombre del banco|
-|                 |                          |acount_type_description     |varchar  | 50 |Tipo de cuenta|
-|                 |                          |account_number              |varchar  | 50 |Número de cuenta|
-|                 |                          |officer                     |varchar  | 100|Nombre de oficial responsable|
-|                 |first_personal_reference* |name                        |varchar  | 100|Nombre completo de la referencia|
-|                 |                          |relationship                |varchar  | 50 |Indica si es Familiar o No Familiar|
-|                 |                          |phone                       |varchar  | 20 |Número de teléfono de la referencia|
-|                 |                          |address                     |varchar  | 150|Dirección|
-|                 |                          |document_number             |varchar  | 20 |Número de documento|
-|                 |                          |document_type_code          |varchar  | 4  |Tipo de documento|
-|                 |second_personal_reference*|name                        |varchar  | 100|Nombre completo de la referencia|
-|                 |                          |relationship                |varchar  | 50 |Indica si es Familiar o No Familiar|
-|                 |                          |phone                       |varchar  | 20 |Número de teléfono de la referencia|
-|                 |                          |address                     |varchar  | 150|Dirección|
-|                 |                          |document_number             |varchar  | 20 |Número de documento|
-|                 |                          |document_type_code          |varchar  | 4  |Tipo de documento|
-|client_transactionality|inc_transactionality*|                           |float    | -  | Monto de transaccionalidad entrante|
-|                 |inc_monthly_movements*    |                            |integer  | -  | Cantidad de movimientos mensuales de entrada|
-|                 |out_transactionality*     |                            |float    | -  | Monto de transaccionalidad saliente|
-|                 |out_monthly_movements*    |                            |integer  | -  | Cantidad de movimientos mensuales de salida|
-|client_entity_branch|branch_code*           |                            |varchar  | 6  |Código de la sucursal de la entidad.|
-|                 |branch_name*              |                            |varchar  | 35 |Nombre de la sucursal de la entidad.|
+| NIVEL 1                  | NIVEL 2                       | NIVEL 3                       | TIPO    | TAMAÑO | DESCRIPCIÓN                                                                                                                                                                                                                             |
+| ------------------------ | ----------------------------- | ----------------------------- | ------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| client\_info             | first\_name\*                 |                               | varchar | 30     | Primer nombre del cliente                                                                                                                                                                                                               |
+|                          | middle\_name                  |                               | varchar | 30     | Segundo nombre del cliente                                                                                                                                                                                                              |
+|                          | last\_name\*                  |                               | varchar | 30     | Primer apellido del cliente                                                                                                                                                                                                             |
+|                          | middle\_last\_name            |                               | varchar | 30     | Segundo Nombre                                                                                                                                                                                                                          |
+|                          | sex\*                         |                               | varchar | 1      | Género: M / F                                                                                                                                                                                                                           |
+|                          | birth\_date\*                 |                               | Date    | -      | Fecha de Nacimiento. Formato YYYY-MM-DD                                                                                                                                                                                                 |
+|                          | civil\_status\_id\*           |                               | Integer | -      | Código de estado civil. Ver Anexo 1                                                                                                                                                                                                     |
+|                          | civil\_status\_description    |                               | varchar | 50     | Descripción del estado civil                                                                                                                                                                                                            |
+|                          | nationality\_code             |                               | varchar | 2      | Código de país de la nacionalidad en Alpha-2. Ejemplo: DO, IT, CO, etc. Ver Anexo 1                                                                                                                                                     |
+|                          | other\_nationality\_code      |                               | varchar | 2      | Código de país de segunda nacionalidad en Alpha-2                                                                                                                                                                                       |
+|                          | document\_type\_code\*        |                               | varchar | 4      | Tipo de documento: CEDU, PASA, RNC, RNCE, LCD, NSS. Anexo 1                                                                                                                                                                             |
+|                          | document\_number\*            |                               | varchar | 15     | Número de documento principal                                                                                                                                                                                                           |
+|                          | issuing\_country\_code\*      |                               | varchar | 2      | Código del país emisor del documento principal                                                                                                                                                                                          |
+|                          | other\_document\_type\_code   |                               | varchar | 4      | Tipo del documento secundario                                                                                                                                                                                                           |
+|                          | other\_document\_number       |                               | varchar | 15     | Número de documento secundario                                                                                                                                                                                                          |
+|                          | other\_issuing\_country\_code |                               | varchar | 2      | País emisor del documento secundario                                                                                                                                                                                                    |
+|                          | person\_type\_code            |                               | varchar | 10     | Indica si la persona es PEP o RPEP. En caso de que no, el valor es vacío                                                                                                                                                                |
+|                          | spouse\_info                  | first\_name                   | varchar | 30     | Primer nombre del cónyuge                                                                                                                                                                                                               |
+|                          |                               | middle\_name                  | varchar | 30     | Segundo nombre del cónyuge                                                                                                                                                                                                              |
+|                          |                               | last\_name                    | varchar | 30     | Apellido del cónyuge                                                                                                                                                                                                                    |
+|                          |                               | middle\_last\_name            | varchar | 30     | Segundo apellido del cónyuge                                                                                                                                                                                                            |
+|                          |                               | document\_type\_code          | varchar | 4      | Tipo de documento                                                                                                                                                                                                                       |
+|                          |                               | document\_number              | varchar | 15     | Número de documento                                                                                                                                                                                                                     |
+|                          |                               | issuing\_country\_code        | varchar | 2      | País emisor del documento                                                                                                                                                                                                               |
+|                          | immigration\_status           | unique\_name                  | varchar | 50     | Identificador único del estatus migratorio: work\_permit, holidays, resident. Ver Anexo 1                                                                                                                                               |
+|                          |                               | description                   | varchar | 50     | Descripción del estatus migratorio: Permiso de trabajo, Vacaciones, Residente.                                                                                                                                                          |
+|                          | additional\_field1            |                               | varchar | 150    | Campo opcional para almacenar lo que indique el cliente. Este campo solo se agrega en la estructura si es un valor válido. Es decir, sólo se agregará en el JSON si existe valor, de lo contrario no.                                   |
+|                          | additional\_field2            |                               | varchar | 150    | Campo opcional para almacenar lo que indique el cliente. Este campo solo se agrega en la estructura si es un valor válido.Es decir, sólo se agregará en el JSON si existe valor, de lo contrario no.                                    |
+|                          | additional\_field3            |                               | varchar | 150    | Campo opcional para almacenar lo que indique el cliente. Este campo solo se agrega en la estructura si es un valor válido. Es decir, sólo se agregará en el JSON si existe valor, de lo contrario no.                                   |
+|                          | related\_accounts             |                               | Array   |        | Este campo comprende una lista de objetos. Cada objeto contiene la información de la cuenta existente en el CORE bancario a la cual se va a vincular al solicitante. Este campo puede venir como una lista vaciá, en caso de no aplicar |
+|                          |                               | account\_link\_type\_code     | varchar | 1      | Código del tipo de vinculación del cliente. Descripción de los valores en la tabla 1.1                                                                                                                                                  |
+|                          |                               | authorized\_signature         | boolean |        | Valor booleano que indica si el cliente es firma autorizada de la cuenta a vincular.                                                                                                                                                    |
+|                          |                               | related\_account\_number      | varchar | 20     | Número de cuenta a vincular al cliente.                                                                                                                                                                                                 |
+|                          | product\_request\_type        |                               | Object  |        | Diccionario que contiene la información referente al tipo de solicitud que se esta realizando. Los tipos de solicitudes son especificados en la tabla 1.2                                                                               |
+|                          |                               | description                   | varchar | 50     | Título del tipo de solicitud.                                                                                                                                                                                                           |
+|                          |                               | code                          | varchar | 1      | Código del tipo de solicitud.                                                                                                                                                                                                           |
+| client\_location         | city\_description\*           |                               | varchar | 30     | Nombre de la ciudad de residencia                                                                                                                                                                                                       |
+|                          | province\_code\*              |                               | varchar | 4      | Código de provincia. Ver Anexo 1                                                                                                                                                                                                        |
+|                          | province\_description\*       |                               | varchar | 70     | Nombre de la provincia                                                                                                                                                                                                                  |
+|                          | country\_description\*        |                               | varchar | 20     | Nombre del país de residencia                                                                                                                                                                                                           |
+|                          | locality\_code\*              |                               | varchar | 6      | Código de localidad.                                                                                                                                                                                                                    |
+|                          | locality\_description\*       |                               | varchar | 70     | Nombre de la localidad                                                                                                                                                                                                                  |
+|                          | country\_code\*               |                               | varchar | 2      | Código de país Alpha-2                                                                                                                                                                                                                  |
+|                          | address\*                     |                               | varchar | 100    | Dirección de domicilio                                                                                                                                                                                                                  |
+|                          | neighbourhood\_description    |                               | varchar | 100    | Nombre del Sector                                                                                                                                                                                                                       |
+|                          | housing\_type                 |                               | varchar | 50     | Tipo de vivienda. Los valores que toma son: Propia y Alquilada.                                                                                                                                                                         |
+|                          | rent\_amount                  |                               | float   | -      | Monto de alquiler en caso de que el tipo de vivienda es alquilada. Puede ser null.                                                                                                                                                      |
+|                          | owner                         |                               | varchar | 80     | Nombre del propietario (caso alquilado)                                                                                                                                                                                                 |
+|                          | owner\_phone                  |                               | varchar | 30     | Número de teléfono del propietario (caso alquilado)                                                                                                                                                                                     |
+|                          | postal\_code                  |                               | varchar | 10     | Código postal                                                                                                                                                                                                                           |
+| client\_contact          | email\*                       |                               | varchar | 50     | Correo electrónico                                                                                                                                                                                                                      |
+|                          | cell\_phone\*                 |                               | varchar | 20     | Número de teléfono celular                                                                                                                                                                                                              |
+|                          | home\_phone                   |                               | varchar | 20     | Número de teléfono de casa                                                                                                                                                                                                              |
+|                          | buss\_phone                   |                               | varchar | 20     | Número de teléfono de oficina                                                                                                                                                                                                           |
+|                          | fax                           |                               | varchar | 20     | Fax                                                                                                                                                                                                                                     |
+|                          | social\_network\_name         |                               | varchar | 45     | Nombre de red social                                                                                                                                                                                                                    |
+|                          | social\_network\_username     |                               | varchar | 30     | Usuario de red social                                                                                                                                                                                                                   |
+| client\_job\_info        | salary\*                      |                               | float   | -      | Monto de salario                                                                                                                                                                                                                        |
+|                          | net\_income\*                 |                               | float   | -      | Ganancia Neta                                                                                                                                                                                                                           |
+|                          | currency\_code\*              |                               | varchar | 4      | Código de moneda. Ver Anexo 1                                                                                                                                                                                                           |
+|                          | work\_address\*               |                               | varchar | 150    | Dirección de trabajo                                                                                                                                                                                                                    |
+|                          | ciiu\*                        |                               | varchar | 6      | Código de la ocupación                                                                                                                                                                                                                  |
+|                          | company\_name                 |                               | varchar | 100    | Nombre de la compañía donde labora el cliente                                                                                                                                                                                           |
+|                          | other\_job\_info              | ciiu                          | varchar | 6      | Código de la actividad comercial adicional. Esta información proviene las actividades cargadas en la herramienta GIR.                                                                                                                   |
+|                          |                               | country\_code                 | varchar | 2      | País de negocio                                                                                                                                                                                                                         |
+|                          |                               | quantity\_of\_employees       | integer | -      | Cantidad de empleados                                                                                                                                                                                                                   |
+|                          |                               | total\_assets                 | Float   | -      | Monto total de los activos                                                                                                                                                                                                              |
+|                          |                               | income\_in\_another\_currency | Float   | -      | Ingresos en otra moneda expresado en USD. Por defecto es 0.                                                                                                                                                                             |
+|                          |                               | origin\_income                | varchar | 100    | Origen de los ingresos. Por defecto retorna null.                                                                                                                                                                                       |
+| client\_references       | first\_bank\_reference        | country\_code                 | varchar | 2      | Código de país en Alpha-2.                                                                                                                                                                                                              |
+|                          |                               | bank\_name                    | varchar | 50     | Nombre del banco                                                                                                                                                                                                                        |
+|                          |                               | acount\_type\_description     | varchar | 50     | Tipo de cuenta                                                                                                                                                                                                                          |
+|                          |                               | account\_number               | varchar | 50     | Número de cuenta                                                                                                                                                                                                                        |
+|                          |                               | officer                       | varchar | 100    | Nombre de oficial responsable                                                                                                                                                                                                           |
+|                          | second\_bank\_reference       | country\_code                 | varchar | 2      | Código de país en Alpha-2.                                                                                                                                                                                                              |
+|                          |                               | bank\_description             | varchar | 50     | Nombre del banco                                                                                                                                                                                                                        |
+|                          |                               | acount\_type\_description     | varchar | 50     | Tipo de cuenta                                                                                                                                                                                                                          |
+|                          |                               | account\_number               | varchar | 50     | Número de cuenta                                                                                                                                                                                                                        |
+|                          |                               | officer                       | varchar | 100    | Nombre de oficial responsable                                                                                                                                                                                                           |
+|                          | first\_personal\_reference\*  | name                          | varchar | 100    | Nombre completo de la referencia                                                                                                                                                                                                        |
+|                          |                               | relationship                  | varchar | 50     | Indica si es Familiar o No Familiar                                                                                                                                                                                                     |
+|                          |                               | phone                         | varchar | 20     | Número de teléfono de la referencia                                                                                                                                                                                                     |
+|                          |                               | address                       | varchar | 150    | Dirección                                                                                                                                                                                                                               |
+|                          |                               | document\_number              | varchar | 20     | Número de documento                                                                                                                                                                                                                     |
+|                          |                               | document\_type\_code          | varchar | 4      | Tipo de documento                                                                                                                                                                                                                       |
+|                          | second\_personal\_reference\* | name                          | varchar | 100    | Nombre completo de la referencia                                                                                                                                                                                                        |
+|                          |                               | relationship                  | varchar | 50     | Indica si es Familiar o No Familiar                                                                                                                                                                                                     |
+|                          |                               | phone                         | varchar | 20     | Número de teléfono de la referencia                                                                                                                                                                                                     |
+|                          |                               | address                       | varchar | 150    | Dirección                                                                                                                                                                                                                               |
+|                          |                               | document\_number              | varchar | 20     | Número de documento                                                                                                                                                                                                                     |
+|                          |                               | document\_type\_code          | varchar | 4      | Tipo de documento                                                                                                                                                                                                                       |
+| client\_transactionality | inc\_transactionality\*       |                               | float   | -      | Monto de transaccionalidad entrante                                                                                                                                                                                                     |
+|                          | inc\_monthly\_movements\*     |                               | integer | -      | Cantidad de movimientos mensuales de entrada                                                                                                                                                                                            |
+|                          | out\_transactionality\*       |                               | float   | -      | Monto de transaccionalidad saliente                                                                                                                                                                                                     |
+|                          | out\_monthly\_movements\*     |                               | integer | -      | Cantidad de movimientos mensuales de salida                                                                                                                                                                                             |
+| client\_entity\_branch   | branch\_code\*                |                               | varchar | 6      | Código de la sucursal de la entidad.                                                                                                                                                                                                    |
+|                          | branch\_name\*                |                               | varchar | 35     | Nombre de la sucursal de la entidad.                                                                                                                                                                                                    |
 
-**Nota:** Los marcados con asterisco (*) son los recomendados a que sean almacenados en el core. Los que no tengan esta marca pueden llegar con el valor de null o vacío (“”).
+**Nota:** Los marcados con asterisco (\*) son los recomendados a que sean almacenados en el core. Los que no tengan esta marca pueden llegar con el valor de null o vacío (“”).
 
+## Ejemplos
 
-### Ejemplos
+<details>
 
-<details><summary>Ejemplo 1</summary>
-<p>
+<summary>Ejemplo 1</summary>
 
 ```
 {
@@ -264,8 +264,9 @@ A continuación la descripción de cada campo:
 
 </details>
 
-<details><summary>Ejemplo 2</summary>
-<p>
+<details>
+
+<summary>Ejemplo 2</summary>
 
 ```
 {
@@ -367,10 +368,12 @@ A continuación la descripción de cada campo:
    }
 }
 ```
+
 </details>
 
-<details><summary>Ejemplo 3</summary>
-<p>
+<details>
+
+<summary>Ejemplo 3</summary>
 
 ```
 {
@@ -487,18 +490,18 @@ A continuación la descripción de cada campo:
 
 </details>
 
-### Respuestas por parte de la entidad
+## Respuestas por parte de la entidad
 
 La entidad deberá retornar, en formato JSON, el número de cliente con los siguientes http status codes:
 
 * **201** - Respuesta exitosa, cliente creado
-
 * **4XX** - Error creando el cliente. Deberá retornar el mensaje del error para ser mostrado en la aplicación.
 
-### Ejemplos de respuestas
+## Ejemplos de respuestas
 
-<details><summary>Ejemplo 1 - Caso exitoso (HTTP STATUS CODE 201) </summary>
-<p>
+<details>
+
+<summary>Ejemplo 1 - Caso exitoso (HTTP STATUS CODE 201)</summary>
 
 ```
 {
@@ -508,8 +511,9 @@ La entidad deberá retornar, en formato JSON, el número de cliente con los sigu
 
 </details>
 
-<details><summary>Ejemplo 2 - Caso error (HTTP STATUS CODE 4XX) </summary>
-<p>
+<details>
+
+<summary>Ejemplo 2 - Caso error (HTTP STATUS CODE 4XX)</summary>
 
 ```
 {

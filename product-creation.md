@@ -1,10 +1,16 @@
+---
+cover: >-
+  https://images.unsplash.com/photo-1423666639041-f56000c27a9a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwxfHxvbmxpbmUlMjBiYW5rfGVufDB8fHx8MTY3NTk4MzYyNg&ixlib=rb-4.0.3&q=80
+coverY: 187
+---
 
-## CREACIÓN DE PRODUCTOS PARA PERSONAS FÍSICAS Y JURÍDICAS
+# CREACIÓN DE PRODUCTOS PARA PERSONAS FÍSICAS Y JURÍDICAS
 
-### Especificaciones
+## Especificaciones
 
 **URL del servicio:**
-```bash 
+
+```bash
 https://{URLCLIENTE}/core_product
 ```
 
@@ -14,16 +20,17 @@ https://{URLCLIENTE}/core_product
 
 **Parámetros de Entrada:**
 
-| NIVEL 1         | TIPO    | TAMAÑO | DESCRIPCIÓN                                                    |
-|-----------------|---------|--------|----------------------------------------------------------------|
-| product_code    | varchar |   4    | Código del producto. Deben ser los mismos que el de la entidad |
-| customer_number | integer |   -    | Número de cliente devuelto en servicio anterior                |
-| open_date       | date    |   -    | Fecha de apertura en formato YYYY-MM-DD                        |
+| NIVEL 1          | TIPO    | TAMAÑO | DESCRIPCIÓN                                                    |
+| ---------------- | ------- | ------ | -------------------------------------------------------------- |
+| product\_code    | varchar | 4      | Código del producto. Deben ser los mismos que el de la entidad |
+| customer\_number | integer | -      | Número de cliente devuelto en servicio anterior                |
+| open\_date       | date    | -      | Fecha de apertura en formato YYYY-MM-DD                        |
 
-### Ejemplo
+## Ejemplo
 
-<details><summary>Ejemplo</summary>
-<p>
+<details>
+
+<summary>Ejemplo</summary>
 
 ```
 {
@@ -35,18 +42,18 @@ https://{URLCLIENTE}/core_product
 
 </details>
 
-### Respuestas por parte de la entidad
+## Respuestas por parte de la entidad
 
 La entidad deberá retornar, en formato JSON, el número de cuenta que le ha asignado a la persona física o jurídica con los siguientes http status codes:
 
 * **201** - Respuesta exitosa, cliente creado
+* **400** - Error asignando el producto al cliente. Deberá retornar el mensaje del error para ser mostrado en la aplicación.
 
-* **400** -  Error asignando el producto al cliente. Deberá retornar el mensaje del error para ser mostrado en la aplicación.
+## Ejemplos de respuestas
 
-### Ejemplos de respuestas
+<details>
 
-<details><summary>Ejemplo 1 - Caso exitoso (HTTP STATUS CODE 201) </summary>
-<p>
+<summary>Ejemplo 1 - Caso exitoso (HTTP STATUS CODE 201)</summary>
 
 ```
 {
@@ -56,8 +63,9 @@ La entidad deberá retornar, en formato JSON, el número de cuenta que le ha asi
 
 </details>
 
-<details><summary>Ejemplo 2 - Caso error (HTTP STATUS CODE 400)</summary>
-<p>
+<details>
+
+<summary>Ejemplo 2 - Caso error (HTTP STATUS CODE 400)</summary>
 
 ```
 {
@@ -67,5 +75,4 @@ La entidad deberá retornar, en formato JSON, el número de cuenta que le ha asi
 
 </details>
 
----
-
+***
