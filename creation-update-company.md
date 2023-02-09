@@ -1,7 +1,7 @@
 ---
 cover: >-
-  https://images.unsplash.com/photo-1531973576160-7125cd663d86?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHw0fHxjb21wYW55fGVufDB8fHx8MTY3NTk4MzQ4MA&ixlib=rb-4.0.3&q=80
-coverY: 0
+  https://images.unsplash.com/photo-1570126618953-d437176e8c79?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwxfHxjb21wYW55fGVufDB8fHx8MTY3NTk4MzQ4MA&ixlib=rb-4.0.3&q=80
+coverY: -282
 ---
 
 # CREACIÓN / ACTUALIZACIÓN DE CLIENTES JURIDICAS
