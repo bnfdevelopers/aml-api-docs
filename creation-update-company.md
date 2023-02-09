@@ -1,6 +1,9 @@
 
 ## CREACIÓN / ACTUALIZACIÓN DE CLIENTES JURIDICAS
 
+
+### Especificaciones
+
 **URL del servicio:**
 ```bash 
 https://{URLCLIENTE}/company_core_customer

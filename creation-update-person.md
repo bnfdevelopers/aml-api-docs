@@ -3,6 +3,8 @@
 
 Para poder crear clientes en el core de la entidad financiera, es necesario que la entidad cliente desarrolle un servicio que permita enviar toda la información tomada desde la aplicación de Clients Inspector hacia el core. El servicio que provea la entidad, deberá retornar el número de cliente que asigna el core. En caso de que el cliente ya exista en el core, deberá ser capaz de actualizar dicha información con la información enviada desde Clients Inspector.
 
+### Especificaciones
+
 **URL del servicio:**
 ```bash 
 https://{URLCLIENTE}/core_customer

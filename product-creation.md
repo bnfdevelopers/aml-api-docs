@@ -1,6 +1,8 @@
 
 ## CREACIÓN DE PRODUCTOS PARA PERSONAS FÍSICAS Y JURÍDICAS
 
+### Especificaciones
+
 **URL del servicio:**
 ```bash 
 https://{URLCLIENTE}/core_product

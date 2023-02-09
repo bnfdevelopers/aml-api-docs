@@ -20,3 +20,4 @@ La Plataforma para Prevención de Lavado de Activos y Financiamiento al Terroris
 * **Envío de transacciones y carga de datos de clientes ocasionales.** La aplicación Transaction Inspector requiere ser alimentada con las transacciones que la institución decida monitorear.  Para esto los sistemas de la institución deberán enviar los datos de la transacción donde se deben incluir los datos de los Clientes Ocasionales, por ejemplo el depositante.  Este paso es necesario para ejecutar la correspondiente debida diligencia simplificada a estos terceros tal como lo indican las regulaciones. El envío de transacciones son servicios que Transaction Inspector habilita para ser invocados por los sistemas de la Institución.
 
 A continuación se describen los diferentes servicios que deben ser implementados por las instituciones.
+
