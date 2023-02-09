@@ -7,7 +7,7 @@ coverY: 0
 
 ## Contenido
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><a href="creation-update-person.md">CREACIÓN / ACTUALIZACIÓN DE CLIENTES PERSONA FÍSICA</a></td><td></td><td></td></tr><tr><td><a href="creation-update-company.md">CREACIÓN / ACTUALIZACIÓN DE CLIENTES JURIDICAS</a></td><td></td><td></td></tr><tr><td><a href="product-creation.md">CREACIÓN DE PRODUCTOS PARA PERSONAS FÍSICAS Y JURÍDICAS</a></td><td></td><td></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td><a href="creation-update-person.md">CREACIÓN / ACTUALIZACIÓN DE CLIENTES PERSONA FÍSICA</a></td><td></td></tr><tr><td></td><td><a href="creation-update-company.md">CREACIÓN / ACTUALIZACIÓN DE CLIENTES JURIDICAS</a></td><td></td></tr><tr><td></td><td><a href="product-creation.md">CREACIÓN DE PRODUCTOS PARA PERSONAS FÍSICAS Y JURÍDICAS</a></td><td></td></tr></tbody></table>
 
 ## Introducción
 
