@@ -2,6 +2,6 @@
 
 ## Available languages:
 
-[Español](Readme.es.md)
+[Español](ES/Readme.es.md)
 
-[English](Readme.en.md)
+[English](EN/Readme.en.md)
