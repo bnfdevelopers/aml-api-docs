@@ -1,7 +1,7 @@
 ---
 cover: >-
   https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwxMHx8cGVyc29uJTIwdGVjaG5vbG9neXxlbnwwfHx8fDE2NzU5ODM0NTA&ixlib=rb-4.0.3&q=80
-coverY: 0
+coverY: -196
 ---
 
 # CREACIÓN / ACTUALIZACIÓN DE CLIENTES PERSONA FÍSICA
