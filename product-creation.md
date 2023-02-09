@@ -1,10 +1,11 @@
 ---
+description: Servicio aplica tanto para persona física como persona jurídica.
 cover: >-
   https://images.unsplash.com/photo-1423666639041-f56000c27a9a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwxfHxvbmxpbmUlMjBiYW5rfGVufDB8fHx8MTY3NTk4MzYyNg&ixlib=rb-4.0.3&q=80
 coverY: 187
 ---
 
-# CREACIÓN DE PRODUCTOS PARA PERSONAS FÍSICAS Y JURÍDICAS
+# Creación de Productos
 
 ## Especificaciones
 
