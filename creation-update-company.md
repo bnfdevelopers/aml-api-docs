@@ -4,6 +4,12 @@ cover: >-
 coverY: -282
 ---
 
+<style scoped>
+table {
+  font-size: 10px;
+}
+</style>
+
 # Creación / Actualización de Clientes Persona Jurídicos
 
 ## Especificaciones

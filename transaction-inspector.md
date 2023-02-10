@@ -4,6 +4,12 @@ cover: >-
 coverY: 0
 ---
 
+<style scoped>
+table {
+  font-size: 10px;
+}
+</style>
+
 # Monitoreo de Transacciones
 
 Este es un servicio que provee la empresa Better and Faster para la carga asíncrona de transacciones y No clientes que servirá de fuente de datos para el despliegue de la suite del monitoreo de transacciones.
