@@ -5,7 +5,7 @@ cover: >-
 coverY: 187
 ---
 
-# Creación de Productos
+# Copy of Creación de Productos
 
 ## Especificaciones
 
@@ -21,7 +21,7 @@ https://{URLCLIENTE}/core_product
 
 ## **Parámetros de Entrada**
 
-| NIVEL 1          | TIPO    | TAMAÑO | DESCRIPCIÓN                                                    |
+| CAMPO            | TIPO    | TAMAÑO | DESCRIPCIÓN                                                    |
 | ---------------- | ------- | ------ | -------------------------------------------------------------- |
 | product\_code    | varchar | 4      | Código del producto. Deben ser los mismos que el de la entidad |
 | customer\_number | integer | -      | Número de cliente devuelto en servicio anterior                |
@@ -31,7 +31,7 @@ https://{URLCLIENTE}/core_product
 
 <details>
 
-<summary>Ejemplo</summary>
+<summary>Ejemplo envío de un cliente para asignación de producto</summary>
 
 ```
 {

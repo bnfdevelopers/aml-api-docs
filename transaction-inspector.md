@@ -104,7 +104,7 @@ Dividiremos la estructura del JSON (llave-valor) en tres niveles: nivel 1, nivel
 |                         |                                   | net\_balance                 | float    | -       | Saldo neto de la cuenta destino.                                                                                                                                                                            |
 | execute                 |                                   |                              | boolean  | -       | Booleano para determinar si la ejecución será síncrona. True/False. Default: false. (Revisar observaciones adicionales).                                                                                    |
 
-<mark style="color:red;">\*Obligatorio / \*\*Recomendado</mark>
+\*Obligatorio / \*\*Recomendado
 
 En la Tabla anterior se aprecia las etiquetas **origin\_non\_customer** y **destination\_non\_customer**. Estos campos sirven para indicar la información de aquellas personas involucradas en un tipo de transacciones (por ejemplo depósitos, retiros y destinatario de una transferencia a una cuenta externa) pero que no son clientes de la entidad.
 
