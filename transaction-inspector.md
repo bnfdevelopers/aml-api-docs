@@ -147,7 +147,9 @@ Cuando se hace una transferencia entre cuentas dentro de la misma entidad (inter
 
 <details>
 
-<summary>Ejemplo 1. Caso depositante no es cliente de la entidad, por lo tanto se envía información en origin_non_customer</summary>
+<summary>Ejemplo 1</summary>
+
+Caso depositante no es cliente de la entidad, por lo tanto se envía información en origin\_non\_customer:
 
 ```
 {
@@ -188,7 +190,9 @@ Cuando se hace una transferencia entre cuentas dentro de la misma entidad (inter
 
 <details>
 
-<summary>Ejemplo 2: Caso depósito donde el depositante es cliente de la entidad. No se envía datos de origin_non_customer</summary>
+<summary>Ejemplo 2</summary>
+
+Caso depósito donde el depositante es cliente de la entidad. No se envía datos de origin\_non\_customer:
 
 ```
 {
@@ -216,7 +220,9 @@ Cuando se hace una transferencia entre cuentas dentro de la misma entidad (inter
 
 <details>
 
-<summary>Ejemplo 3: Caso retiro donde el que recibe el dinero no es cliente de la entidad por lo que se envía la información en destination_non_customer</summary>
+<summary>Ejemplo 3</summary>
+
+Caso retiro donde el que recibe el dinero no es cliente de la entidad por lo que se envía la información en destination\_non\_customer:
 
 ```
 {
@@ -258,7 +264,9 @@ Cuando se hace una transferencia entre cuentas dentro de la misma entidad (inter
 
 <details>
 
-<summary>Ejemplo 4: Caso retiro donde el que recibe el dinero es cliente de la entidad por lo que no se envía la información en destination_non_customer</summary>
+<summary>Ejemplo 4</summary>
+
+Caso retiro donde el que recibe el dinero es cliente de la entidad por lo que no se envía la información en destination\_non\_customer:
 
 ```
 {
@@ -288,7 +296,9 @@ Cuando se hace una transferencia entre cuentas dentro de la misma entidad (inter
 
 <details>
 
-<summary>Ejemplo 5: Caso transferencia cuenta a cuenta donde el origen y destino son cuentas dentro de la entidad (transferencias internas)</summary>
+<summary>Ejemplo 5</summary>
+
+Caso transferencia cuenta a cuenta donde el origen y destino son cuentas dentro de la entidad (transferencias internas):
 
 ```
 {
@@ -316,7 +326,9 @@ Cuando se hace una transferencia entre cuentas dentro de la misma entidad (inter
 
 <details>
 
-<summary>Ejemplo 6: Caso transferencia donde el origen es una cuenta de la entidad y el destinatario es cuenta en otra entidad (beneficiario). Transferencias externas</summary>
+<summary>Ejemplo 6</summary>
+
+Caso transferencia donde el origen es una cuenta de la entidad y el destinatario es cuenta en otra entidad (beneficiario). Transferencias externas:
 
 ```
 {
@@ -360,7 +372,9 @@ Cuando se hace una transferencia entre cuentas dentro de la misma entidad (inter
 
 <details>
 
-<summary>Ejemplo 7: Caso transferencia donde el origen es una cuenta de otra entidad y el destinatario es una cuenta de un cliente de la entidad. Transferencias externas</summary>
+<summary>Ejemplo 7</summary>
+
+Caso transferencia donde el origen es una cuenta de otra entidad y el destinatario es una cuenta de un cliente de la entidad. Transferencias externas:
 
 ```
 {
@@ -404,7 +418,9 @@ Cuando se hace una transferencia entre cuentas dentro de la misma entidad (inter
 
 <details>
 
-<summary>Ejemplo 8: Caso depósito donde el depositante es cliente de la entidad y la cuenta destino no existe en nuestra plataforma. No se envía datos de origin_non_customer</summary>
+<summary>Ejemplo 8</summary>
+
+Caso depósito donde el depositante es cliente de la entidad y la cuenta destino no existe en nuestra plataforma. No se envía datos de origin\_non\_customer:
 
 ```
 {
@@ -442,7 +458,9 @@ Cuando se hace una transferencia entre cuentas dentro de la misma entidad (inter
 
 <details>
 
-<summary>Ejemplo 9: Caso retiro donde el que recibe el dinero es cliente de la entidad por lo que no se envía la información en destination_non_customer. La información de la cuenta origen es enviada.</summary>
+<summary>Ejemplo 9</summary>
+
+Caso retiro donde el que recibe el dinero es cliente de la entidad por lo que no se envía la información en destination\_non\_customer. La información de la cuenta origen es enviada:
 
 ```
 {
@@ -480,7 +498,9 @@ Cuando se hace una transferencia entre cuentas dentro de la misma entidad (inter
 
 <details>
 
-<summary>Ejemplo 10: Caso transferencia cuenta a cuenta donde el origen y destino son cuentas dentro de la entidad (transferencias internas). En caso de no existir ambas cuentas se envían las dos. Si solo existe una, se puede enviar una de las dos o incluso ninguna.</summary>
+<summary>Ejemplo 10</summary>
+
+Caso transferencia cuenta a cuenta donde el origen y destino son cuentas dentro de la entidad (transferencias internas). En caso de no existir ambas cuentas se envían las dos. Si solo existe una, se puede enviar una de las dos o incluso ninguna:
 
 ```
 {
@@ -602,7 +622,9 @@ No retorna ningún body de respuesta
 
 <details>
 
-<summary>Ejemplo 3 - Caso error (HTTP STATUS CODE 400). Caso cuando el customer number la información de la cuenta suministrada no existe. Este ejemplo muestra error de dos transacciones enviadas simultáneamente en el servicio.</summary>
+<summary>Ejemplo 4</summary>
+
+Caso error (HTTP STATUS CODE 400). Caso cuando el customer number la información de la cuenta suministrada no existe. Este ejemplo muestra error de dos transacciones enviadas simultáneamente en el servicio:
 
 ```
 [
