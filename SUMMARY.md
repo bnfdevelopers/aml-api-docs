@@ -4,5 +4,4 @@
 * [Creación / Actualización de Clientes Persona Física](creation-update-person.md)
 * [Creación / Actualización de Clientes Persona Jurídicos](creation-update-company.md)
 * [Creación de Productos](product-creation.md)
-* [Copy of Creación de Productos](product-creation-1.md)
 * [Monitoreo de Transacciones](transaction-inspector.md)

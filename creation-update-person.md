@@ -4,7 +4,7 @@ cover: >-
 coverY: -196
 ---
 
-# CREACIÓN / ACTUALIZACIÓN DE CLIENTES PERSONA FÍSICA
+# Creación / Actualización de Clientes Persona Física
 
 Para poder crear clientes en el core de la entidad financiera, es necesario que la entidad cliente desarrolle un servicio que permita enviar toda la información tomada desde la aplicación de Clients Inspector hacia el core. El servicio que provea la entidad, deberá retornar el número de cliente que asigna el core. En caso de que el cliente ya exista en el core, deberá ser capaz de actualizar dicha información con la información enviada desde Clients Inspector.
 
@@ -20,7 +20,9 @@ https://{URLCLIENTE}/core_customer
 
 **Tipo de Autenticación:** Basic Authentication (Autenticación Básica). Por seguridad, el servicio que tendrá que crear el equipo de TI de la entidad deberá ser capaz de manejar este tipo de autenticación para que nos provea unas credenciales de acceso al servicio.
 
-**Parámetros de Entrada:** Dividiremos la estructura del JSON (llave-valor) en tres niveles: nivel 1, nivel 2 y nivel 3, dependiendo del tipo de información que provea los nodos de nivel 2. Los nodos de nivel 1 serán los siguientes:
+## **Parámetros de Entrada**
+
+Dividiremos la estructura del JSON (llave-valor) en tres niveles: nivel 1, nivel 2 y nivel 3, dependiendo del tipo de información que provea los nodos de nivel 2. Los nodos de nivel 1 serán los siguientes:
 
 * **client\_info:** Indicará la información personal del cliente a ser creado: nombres, apellidos, número de documentos, etc.
 * **client\_location:** Datos de vivienda del cliente.

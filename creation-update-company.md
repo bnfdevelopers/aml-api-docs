@@ -4,7 +4,7 @@ cover: >-
 coverY: -282
 ---
 
-# CREACIÓN / ACTUALIZACIÓN DE CLIENTES JURIDICAS
+# Creación / Actualización de Clientes Persona Jurídicos
 
 ## Especificaciones
 
@@ -18,7 +18,9 @@ https://{URLCLIENTE}/company_core_customer
 
 **Tipo de Autenticación:** Basic Authentication (Autenticación Básica). El equipo de TI debe proveer las respectivas credenciales de acceso a este servicio.
 
-**Parámetros de Entrada:** Se provee una estructura de datos, bajo el formato JSON. La cual esta constituida de la siguiente forma:
+## **Parámetros de Entrada**
+
+Se provee una estructura de datos, bajo el formato JSON. La cual esta constituida de la siguiente forma:
 
 * **company\_info:** Información principal de la compañía tales como: nombre, identificación, actividad económica, entidad donde fue registrada, etc.
 * **company\_main\_address:** Información de la ubicación de la sede principal de la empresa.
