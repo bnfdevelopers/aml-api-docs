@@ -18,7 +18,7 @@ https://{URLCLIENTE}/core_customer
 
 **Método:** POST
 
-**Tipo de Autenticación:** Basic Authentication (Autenticación Básica). Por seguridad, ell servicio que tendrá que crear el equipo de TI de la entidad deberá ser capaz de manejar este tipo de autenticación para que nos provea unas credenciales de acceso al servicio.
+**Tipo de Autenticación:** Basic Authentication (Autenticación Básica). Por seguridad, el servicio que tendrá que crear el equipo de TI de la entidad deberá ser capaz de manejar este tipo de autenticación para que nos provea unas credenciales de acceso al servicio.
 
 **Parámetros de Entrada:** Dividiremos la estructura del JSON (llave-valor) en tres niveles: nivel 1, nivel 2 y nivel 3, dependiendo del tipo de información que provea los nodos de nivel 2. Los nodos de nivel 1 serán los siguientes:
 
