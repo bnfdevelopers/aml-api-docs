@@ -45,8 +45,7 @@ Se provee una estructura de datos, bajo el formato JSON. La cual esta constituid
     * **persons\_members:** Lista de la información de los socios (personas físicas) de la empresa.
     * **company\_members:** Si la empresa tiene socios que también son empresas, entonces aparecerá la información de dichas empresas (en una lista) en este nivel. Estas empresas pueden, a su vez, tener socias tanto empresas como personas físicas, por lo que el árbol se empieza expandir dependiendo de la cantidad de socios que agregue el usuario. En el ejemplo más adelante veremos que la compañía principal tiene un sólo socio persona física (person\_members) y dos empresas socias (company\_members) que a su vez, una de ellas tiene una persona física (person\_members) y la otra tiene una empresa como socia y así sucesivamente.
 
-> :warning: **IMPORTANTE:**
-> Recomendamos que aquellos campos que son marcados como no obligatorios para enviar, se valide si esa llave es enviada en el json o no. Esto porque puede haber casos en que algún objeto viaje en el json si hay algún valor, de lo contrario no aparecerá.
+> :warning: **IMPORTANTE:** Recomendamos que aquellos campos que no son marcos con un asterisco (*), se valide primero si esa campo y objeto es enviada en el json o no. Esto porque puede haber casos en que algún objeto viaje en el json si hay algún valor, de lo contrario no aparecerá.
 
    A continuación la descripción de cada campo:
 

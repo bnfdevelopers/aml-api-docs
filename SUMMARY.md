@@ -5,3 +5,4 @@
 * [Creación / Actualización de Clientes Jurídicos](creation-update-company.md)
 * [Creación de Productos](product-creation.md)
 * [Monitoreo de Transacciones](transaction-inspector.md)
+* [Actualizaciones / Releases](CHANGELOG.md)

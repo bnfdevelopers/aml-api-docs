@@ -39,7 +39,7 @@ Dividiremos la estructura del JSON (llave-valor) en tres niveles: nivel 1, nivel
 * **client\_transactionality:** Datos de transaccionalidad del cliente.
 * **client\_entity\_branch:** Información de la sucursal de la entidad donde el cliente se está registrando.
 
-> :warning: **IMPORTANTE:** Recomendamos que aquellos campos que son marcados como no obligatorios para enviar, se valide si esa llave es enviada en el json o no. Esto porque puede haber casos en que algún objeto viaje en el json si hay algún valor, de lo contrario no aparecerá.
+> :warning: **IMPORTANTE:** Recomendamos que aquellos campos que no son marcos con un asterisco (*), se valide primero si esa campo y objeto es enviada en el json o no. Esto porque puede haber casos en que algún objeto viaje en el json si hay algún valor, de lo contrario no aparecerá.
 
 A continuación la descripción de cada campo:
 
@@ -158,7 +158,7 @@ A continuación la descripción de cada campo:
 |                          | branch\_name\*                |                               | varchar | 35     | Nombre de la sucursal de la entidad.                                                                                                                                                                                                    |
 
 **Nota:** Los marcados con asterisco (\*) son los recomendados a que sean almacenados en el core. Los que no tengan esta marca pueden llegar con el valor de null, vacío (“”) o incluso no aparecer en el json.
-> :warning: **Importante**
+> :warning: **Importante:**
 > Se recomienda siempre validar que algún objeto y/o campo del json venga en el mismo. Ejemplo:
 ```
 data = request.json
