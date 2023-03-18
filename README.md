@@ -17,4 +17,6 @@ La Plataforma para Prevención de Lavado de Activos y Financiamiento al Terroris
 * **Creación de productos desde Clients Inspector hacia los sistemas de la entidad**. La creación del producto se realiza después de la creación del cliente, siempre que la misma haya sido exitosa. El Rol Gerente verá una solicitud de creación de producto en su bandeja la cual debe aprobar. Clients inspector invocará las funciones descritas en este documento para que el cliente sea creado en los sistemas de la institución.
 * **Envío de transacciones y carga de datos de clientes ocasionales.** La aplicación Transaction Inspector requiere ser alimentada con las transacciones que la institución decida monitorear. Para esto los sistemas de la institución deberán enviar los datos de la transacción donde se deben incluir los datos de los Clientes Ocasionales, por ejemplo el depositante. Este paso es necesario para ejecutar la correspondiente debida diligencia simplificada a estos terceros tal como lo indican las regulaciones. El envío de transacciones son servicios que Transaction Inspector habilita para ser invocados por los sistemas de la Institución.
 
+Para ver las actualizaciones y releases haz clic [aquí](CHANGELOG.md).&#x20;
+
 A continuación se describen los diferentes servicios que deben ser implementados por las instituciones.
