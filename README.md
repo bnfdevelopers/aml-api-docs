@@ -7,7 +7,7 @@ coverY: 0
 
 ## Contenido
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td><a href="creation-update-person.md">Creación / Actualización de Clientes Persona Física</a></td><td></td></tr><tr><td></td><td><a href="creation-update-company.md">Creación / Actualización de Clientes Persona Jurídica</a></td><td></td></tr><tr><td></td><td><a href="product-creation.md">Creación de Productos</a></td><td></td></tr><tr><td><p></p><p><a href="transaction-inspector.md">Monitoreo de Transacciones</a></p></td><td></td><td></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td><a href="creation-update-person.md">Creación / Actualización de Clientes Persona Física</a></td><td></td></tr><tr><td></td><td><a href="creation-update-company.md">Creación / Actualización de Clientes Persona Jurídica</a></td><td></td></tr><tr><td></td><td><a href="product-creation.md">Creación de Productos</a></td><td></td></tr><tr><td><p></p><p><a href="transaction-inspector.md">Monitoreo de Transacciones</a></p></td><td></td><td></td></tr><tr><td><a href="static-data.md">Anexos</a></td><td></td><td></td></tr></tbody></table>
 
 ## Introducción
 
