@@ -12,6 +12,8 @@
 
     * Eliminado el objeto _product_request_type_.
 
+    * Agregado campo _other_dex_description_.
+
 * Nodo **client_location:**
 
     * Los campos _province_code, neighbourhood_description_ pueden no aparecer en el json dependiendo si el valor es null o no.
@@ -22,7 +24,9 @@
 
 * Nodo **client_job_info:**
 
-    * Agregados los campos: _annual_gross_salary, entry_date, professional_position_.
+    * Agregados los campos: _annual_gross_salary, entry_date, professional_position, country_.
+
+    * En la actividad comercial adicional se agregaron los campos: _commercial_activity_code, commercial_activity_description, origin_income_.
 
     * Agregado el objeto _previously_employment_data_. En caso de existir irá en el json de lo contrario no.
 
@@ -32,16 +36,20 @@
 
     * En las referencias bancarias se agregaron los campos _canceled y canceled_reason_.
 
-    * En las referencias personales se agregó el campo _country_.
+    * En las referencias personales se agregó los campos _country, reference_relationship_unique_description_.
 
 * Nodo **client_transactionality:**
 
-    * Agregado los campos _funds_country_.
+    * Agregado los campos _funds_country_code y funds_country_description_.
 
 * Nuevo nodo **client_documents:** Usado para enviar la información de los documentos de identidad ingresados por el cliente.
 
 
 ### CREACIÓN / ACTUALIZACIÓN DE CLIENTES PERSONA JURÍDICA
+
+* Nodo **company_info:**
+
+    * Agregado los campos _acronym, is_private_entity, is_financial_entity_
 
 * Nodo **company_main_address:**
 
