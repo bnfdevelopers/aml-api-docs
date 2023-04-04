@@ -6,3 +6,4 @@
 * [Creación de Productos](product-creation.md)
 * [Monitoreo de Transacciones](transaction-inspector.md)
 * [Actualizaciones / Releases](CHANGELOG.md)
+* [Anexos](static-data.md)
