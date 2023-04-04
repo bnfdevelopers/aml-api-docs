@@ -46,32 +46,35 @@ A continuación la descripción de cada campo:
 | ---------------------------- | ------------------------------------------------ | --------------------------------- | ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | company\_info                | name\*                                           |                                   | varchar | 250    | Nombre de la empresa                                                                                                                                                                                                                  |
 |                              | alternate\_name                                  |                                   | varchar | 250    | Nombre alternativo de la empresas                                                                                                                                                                                                     |
+|                              | acronym                                          |                                   | varchar | 100    | Acrónimo de la empresas                                                                                                                                                                                                               |
 |                              | founding\_date\*                                 |                                   | date    | -      | Fecha de constitución en formato: YYYY-MM-DD                                                                                                                                                                                          |
 |                              | main\_language                                   |                                   | varchar | 100    | Idioma de principal uso. Ejemplo: Español, Inglés, etc                                                                                                                                                                                |
-|                              | company\_category\_unique\_name\*                |                                   | varchar | 100    | Código único que identifica al tipo de sociedad. Por ejemplo: limited\_liability\_partnership. Ver Anexo 1                                                                                                                            |
-|                              | company\_category\_description\*                 |                                   | text    | -      | Descripción del tipo de sociedad. Por ejemplo: Sociedad de Responsabilidad Limitada (SRL) Ver Anexo 1                                                                                                                                 |
+|                              | company\_category\_unique\_name\*                |                                   | varchar | 100    | Código único que identifica al tipo de sociedad. Por ejemplo: limited\_liability\_partnership. Ver Anexos [aquí](static-data.md)                                                                                                      |
+|                              | company\_category\_description\*                 |                                   | text    | -      | Descripción del tipo de sociedad. Por ejemplo: Sociedad de Responsabilidad Limitada (SRL)                                                                                                                                             |
 |                              | document\_description\*                          |                                   | varchar | 30     | Número de identificación de la empresa (TXID, Tax ID, ...)                                                                                                                                                                            |
 |                              | document\_issuing\_country\_code\*               |                                   | varchar | 2      | País emisor de documento en formato Alpha-2.                                                                                                                                                                                          |
 |                              | document\_type\_code\*                           |                                   | varchar | 20     | Tipo de documento.                                                                                                                                                                                                                    |
-|                              | economic\_activity\_code\*                       |                                   | varchar | 6      | Código CIIU que indica la actividad económica de la empresa.                                                                                                                                                                          |
-|                              | economic\_activity\_description\*                |                                   | varchar | 250    | Descripción de la actividad económica de la empresa de acuerdo al código CIIU.                                                                                                                                                        |
+|                              | economic\_activity\_code\*                       |                                   | varchar | 6      | Código de la actividad económica de la empresa.                                                                                                                                                                                       |
+|                              | economic\_activity\_description\*                |                                   | varchar | 250    | Descripción de la actividad económica de la empresa de acuerdo al código anterio.                                                                                                                                                     |
 |                              | registry\_id\*                                   |                                   | varchar | 50     | Número de registro.                                                                                                                                                                                                                   |
 |                              | registering\_entity\_name\*                      |                                   | varchar | 50     | Nombre de la entidad registradora, por ejemplo: DGII                                                                                                                                                                                  |
 |                              | registering\_entity\_country\_code\*             |                                   | varchar | 2      | Código del país donde se encuentra la entidad registradora en formato Alpha2. Ejemplo: DO.                                                                                                                                            |
 |                              | tax\_residence\_country\_code\*                  |                                   | varchar | 2      | Código del país donde la empresa paga impuestos                                                                                                                                                                                       |
 |                              | total\_shares\*                                  |                                   | float   | -      | Cantidad total de acciones.                                                                                                                                                                                                           |
+|                              | is\_private\_entity                              |                                   | Boolean | -      | Indica si la entidad es privada o no (true: Es privada, false: No es privada)                                                                                                                                                         |
+|                              | is\_financial\_entity                            |                                   | Boolean | -      | Indica si es una entidad financiera o no (true: Es financiera, false: No es financiera)                                                                                                                                               |
 |                              | additional\_field1                               |                                   | varchar | 150    | Campo opcional para almacenar lo que indique el cliente. Este campo solo se agrega en la estructura si es un valor válido. Es decir, sólo se agregará en el JSON si existe valor, de lo contrario no.                                 |
 |                              | additional\_field2                               |                                   | varchar | 150    | Campo opcional para almacenar lo que indique el cliente. Este campo solo se agrega en la estructura si es un valor válido. Es decir, sólo se agregará en el JSON si existe valor, de lo contrario no.                                 |
 |                              | additional\_field3                               |                                   | varchar | 150    | Campo opcional para almacenar lo que indique el cliente. Este campo solo se agrega en la estructura si es un valor válido. Es decir, sólo se agregará en el JSON si existe valor, de lo contrario no.                                 |
-|                              | product\_request\_type                           |                                   | Object  |        | Diccionario que contiene la información referente al tipo de solicitud que se esta realizando. Los tipos de solicitudes son especificados en la tabla 1.2                                                                             |
-|                              |                                                  | description                       | varchar | 50     | Título del tipo de solicitud.                                                                                                                                                                                                         |
+|                              | product\_request\_type                           |                                   | Object  |        | Diccionario que contiene la información referente al tipo de solicitud que se esta realizando. Ver Anexos [aquí](static-data.md)                                                                                                      |
+|                              |                                                  | description                       | varchar | 50     | Descripción del tipo de solicitud.                                                                                                                                                                                                    |
 |                              |                                                  | code                              | varchar | 1      | Código del tipo de solicitud.                                                                                                                                                                                                         |
 | company\_main\_address       | city\_description\*                              |                                   | varchar | 150    | Ciudad donde se encuentra la sede principal de la empresa.                                                                                                                                                                            |
 |                              | neighbourhood\_description                       |                                   | varchar | 150    | Sector donde se encuentra ubicada la sede principal de la empresa.                                                                                                                                                                    |
-|                              | province\_code                                   |                                   | varchar | 10     | Código de la provincia. Ver Anexo 1                                                                                                                                                                                                   |
-|                              | province\_description                            |                                   | varchar | 150    | Nombre de la provincia.                                                                                                                                                                                                               |
+|                              | province\_code                                   |                                   | varchar | 10     | Código de la provincia/estado. Ver Anexos [aquí](static-data.md)                                                                                                                                                                      |
+|                              | province\_description                            |                                   | varchar | 150    | Nombre de la provincia/estado.                                                                                                                                                                                                        |
 |                              | street\*                                         |                                   | varchar | 150    | Dirección de la empresa.                                                                                                                                                                                                              |
-|                              | company\_properties\_type\*                      |                                   | varchar | 50     | Toma los valores: rented (si la propiedad es alquilada), owned(si es propia)                                                                                                                                                          |
+|                              | company\_properties\_type\*                      |                                   | varchar | 50     | Toma los valores: rented (si la propiedad es alquilada), owned (si es propia)                                                                                                                                                         |
 |                              | company\_properties\_owner\*                     |                                   | varchar | 100    | Nombre completo del dueño de la propiedad cuando la misma es alquilada                                                                                                                                                                |
 |                              | company\_properties\_owner\_phone\*              |                                   | varchar | 30     | Teléfono de contacto de la propiedad cuando la misma es alquilada                                                                                                                                                                     |
 |                              | company\_properties\_rent\_amount\*              |                                   | float   | -      | Monto del alquiler cuando la propiedad es alquilada                                                                                                                                                                                   |
@@ -120,7 +123,7 @@ A continuación la descripción de cada campo:
 |                              | document\_number                                 |                                   | varchar | 20     | Número de documento.                                                                                                                                                                                                                  |
 |                              | document\_issuing\_country\_code                 |                                   | varchar | 2      | País emisor de documento en Alpha2.                                                                                                                                                                                                   |
 |                              | document\_type\_code                             |                                   | varchar | 10     | Tipo de documento. Ejemplo: ide, PAOR, etc                                                                                                                                                                                            |
-|                              | gender                                           |                                   | varchar | 1      | Género. Ejemplo: M, F.                                                                                                                                                                                                                |
+|                              | gender                                           |                                   | varchar | 1      | Género. Ejemplo: M, F, NB, NC, O.                                                                                                                                                                                                     |
 | company\_treasurers          | first\_name                                      |                                   | varchar | 50     | Primer nombre.                                                                                                                                                                                                                        |
 |                              | middle\_name                                     |                                   | varchar | 50     | Segundo nombre en caso de que la persona posea. De lo contrario, no viene esta información.                                                                                                                                           |
 |                              | last\_name                                       |                                   | varchar | 50     | Primer apellido.                                                                                                                                                                                                                      |
@@ -129,14 +132,14 @@ A continuación la descripción de cada campo:
 |                              | document\_issuing\_country\_code                 |                                   | varchar | 2      | País emisor de documento en Alpha2.                                                                                                                                                                                                   |
 |                              | document\_type\_code                             |                                   | varchar | 10     | Tipo de documento. Ejemplo: IDEN, PAOR, etc                                                                                                                                                                                           |
 |                              | gender                                           |                                   | varchar | 1      | Género. Ejemplo: M, F.                                                                                                                                                                                                                |
-| company\_partners            | person\_members                                  | first\_name                       | varchar | 50     | Segundo nombre en caso de que la persona posea. De lo contrario, no viene esta información.                                                                                                                                           |
-|                              |                                                  | middle\_name                      | varchar | 50     | Primer apellido.                                                                                                                                                                                                                      |
-|                              |                                                  | last\_name                        | varchar | 50     | Segundo apellido en caso de que la persona posea. De lo contrario, no viene esta información.                                                                                                                                         |
-|                              |                                                  | middle\_last\_name                | varchar | 20     | Número de documento.                                                                                                                                                                                                                  |
-|                              |                                                  | document\_number                  | varchar | 2      | País emisor de documento en Alpha2.                                                                                                                                                                                                   |
-|                              |                                                  | document\_issuing\_country\_code  | varchar | 10     | Tipo de documento. Ejemplo: IDEN, PAOR, etc                                                                                                                                                                                           |
-|                              |                                                  | document\_type\_code              | varchar | 1      | Género. Ejemplo: M, F.                                                                                                                                                                                                                |
-|                              |                                                  | gender                            |         |        |                                                                                                                                                                                                                                       |
+| company\_partners            | person\_members                                  | first\_name                       | varchar | 50     | Primer nombre.                                                                                                                                                                                                                        |
+|                              |                                                  | middle\_name                      | varchar | 50     | Segundo nombre en caso de que la persona posea. De lo contrario, no viene esta información.                                                                                                                                           |
+|                              |                                                  | last\_name                        | varchar | 50     | Primer apellido.                                                                                                                                                                                                                      |
+|                              |                                                  | middle\_last\_name                | varchar | 50     | Segundo apellido en caso de que la persona posea. De lo contrario, no viene esta información.                                                                                                                                         |
+|                              |                                                  | document\_number                  | varchar | 20     | Número de documento.                                                                                                                                                                                                                  |
+|                              |                                                  | document\_issuing\_country\_code  | varchar | 2      | País emisor de documento en Alpha2.                                                                                                                                                                                                   |
+|                              |                                                  | document\_type\_code              | varchar | 10     | Tipo de documento. Ejemplo: IDEN, PAOR, etc                                                                                                                                                                                           |
+|                              |                                                  | gender                            | varchar | 1      | Género. Ejemplo: M, F.                                                                                                                                                                                                                |
 |                              | company\_members                                 | name                              | varchar | 250    | Nombre de la empresa socia.                                                                                                                                                                                                           |
 |                              |                                                  | document\_description             | varchar | 30     | Número de identificación de la empresa socia.                                                                                                                                                                                         |
 |                              |                                                  | document\_type\_code              | varchar | 20     | Código del tipo de identificación de la empresa socia.                                                                                                                                                                                |
@@ -395,146 +398,124 @@ A continuación la descripción de cada campo:
 {
    "company_branches":[
       {
-         "description":"calle prueba, #1000",
-         "document_issuing_country_code":"DO",
-         "document_number":"101007712",
+         "description":"175 sw miami ave",
+         "document_issuing_country_code":"US",
+         "document_number":"1115555",
          "document_type_code":"TXID",
-         "name":"RAFAEL TAVAREZ & CO, SRL",
-         "neighbourhood_description":"30 De Mayo ",
-         "phone_number":"8097081365",
-         "responsible_name":"NIRCIA MERCEDES DEL ROSARIO PEREZ"
+         "name":"Property Company",
+         "phone_number":"7869987744",
+         "responsible_name":"Ramon Marquez"
       }
    ],
    "company_business_type":{
       "cash_expected_monthly_revenue_amount":500000.0,
-      "cash_expected_monthly_revenue_currency_code":"DOP",
-      "current_year_sales_amount":12000000.0,
-      "current_year_sales_currency_code":"DOP",
-      "employees_range":"1 a 20",
-      "last_year_sales_amount":20000000.0,
-      "last_year_sales_amount_currency_code":"DOP",
-      "product_description":"PRODUCTOS VEGETALES DE CULTIVO",
-      "product_unique_description":"vegetables"
+      "cash_expected_monthly_revenue_currency_code":"USD",
+      "current_year_sales_amount":1000000.0,
+      "current_year_sales_currency_code":"USD",
+      "employees_range":"20 a 100",
+      "last_year_sales_amount":2500000.0,
+      "last_year_sales_amount_currency_code":"USD",
+      "product_description":"Real Estate and Rental and Leasing",
+      "product_unique_description":"real_estate"
    },
    "company_entity_branch":{
-      "branch_code":"2",
-      "branch_name":"Yamasa"
+      "branch_code":"01",
+      "branch_name":"Miami"
    },
    "company_info":{
-      "acronym":"TRANSE",
+      "account_officer":"15",
       "company_category_description":"Sociedad de Responsabilidad Limitada (SRL)",
       "company_category_unique_name":"limited_liability_partnership",
-      "document_description":"101711035",
-      "document_issuing_country_code":"DO",
+      "document_description":"1115555",
+      "document_issuing_country_code":"US",
       "document_type_code":"TXID",
-      "economic_activity_code":"602100",
-      "economic_activity_description":"Servicios de transporte automotor",
-      "founding_date":"1996-04-22",
+      "economic_activity_code":"531390",
+      "economic_activity_description":"Other Activities Related to Real Estate                                                                                                                         ",
+      "founding_date":"2009-03-18",
+      "main_language":"Ingles",
+      "name":"Property Company",
       "is_financial_entity":false,
       "is_private_entity":true,
-      "main_language":"Español",
-      "name":"TRANSPORTE EMMANUEL SRL",
+      "product_request_type":{
+         "code":"product_request",
+         "description":"Solicitud de Producto"
+      },
       "registering_entity_country_code":"DO",
       "registering_entity_name":"Dirección General de Impuestos Internos",
-      "registry_id":"12345SD",
-      "tax_residence_country_code":"DO",
+      "registry_id":"122121121",
+      "tax_residence_country_code":"US",
       "total_shares":0.0,
-      "product_request_type":{
-         "description":"Solicitud de Producto",
-         "code":"product_request"
-      }
+      "url":"propertycomp.com"
    },
    "company_main_address":{
-      "city_description":"Santo Domingo",
-      "neighbourhood_description":"Alcarrizos Viejo",
-      "province_code":"3200",
-      "province_description":"Santo Domingo",
-      "street":"calle prueba nueva, #200",
-      "company_properties_owner": "DANIEL MARTINEZ",
-      "company_properties_owner_phone": "8296547744",
-      "company_properties_rent_amount": "2000.00",
-      "company_properties_type": "rented",
+      "city_description":"Miami",
+      "company_properties_type":"owned",
+      "province_description":"Florida",
+      "street":"175 sw miami ave"
    },
    "company_main_customers":[
       {
-         "consumed_product_description":"PRODUCTOS VEGETALES DE CULTIVO",
-         "main_customer_country_code":"DO",
-         "main_customer_description":"JOSE MARIA ALMONTE GONZALEZ",
-         "company_properties_type": "owned",
+         "consumed_product_description":"Real Estate and Rental and Leasing",
+         "main_customer_country_code":"US",
+         "main_customer_description":"ACB Company SRL"
       }
    ],
    "company_managers":[
       {
-         "birth_date":"1975-01-04",
-         "document_issuing_country_code":"DO",
-         "document_number":"07600125962",
-         "document_type_code":"IDEN",
-         "first_name":"PASIRIS",
-         "gender":"F",
-         "last_name":"REYES",
-         "middle_last_name":"REYES"
-      },
-      {
-         "birth_date":"1958-05-11",
-         "document_issuing_country_code":"DO",
-         "document_number":"00200141877",
-         "document_type_code":"IDEN",
-         "first_name":"OBELIO",
+         "birth_date":"1971-03-11",
+         "document_issuing_country_code":"US",
+         "document_number":"111110011",
+         "document_type_code":"SSN",
+         "email":"luisma@dev.com",
+         "first_name":"LUIS",
          "gender":"M",
-         "last_name":"DE LOS SANTOS",
-         "middle_last_name":"DE LOS SANTOS"
+         "last_name":"ROMERO"
       }
    ],
    "company_partners":{
       "company_members":[
-
+         
       ],
       "person_members":[
          {
-            "birth_date":"1961-11-20",
-            "document_issuing_country_code":"DO",
-            "document_number":"00200190593",
-            "document_type_code":"IDEN",
-            "first_name":"SINENCIO",
+            "birth_date":"1977-11-10",
+            "document_issuing_country_code":"US",
+            "document_number":"11112200",
+            "document_type_code":"SSN",
+            "email":"danielal@dev.com",
+            "first_name":"DANIEL",
             "gender":"M",
-            "last_name":"RODRIGUEZ"
+            "last_name":"PEREZ",
+            "middle_name":"ALEJANDRO"
          }
       ]
    },
-   "company_subsidiaries":[
-      {
-         "document_number":"101007672",
-         "document_type_code":"TXID",
-         "issuing_country_code":"DO",
-         "subsidiary_name":"R SIRAGUSA SRL",
-         "subsidiary_product_name":"PRODUCTOS VEGETALES DE CULTIVO"
-      }
-   ],
    "company_suppliers":[
       {
-         "supplier_country_code":"DO",
-         "supplier_description":"TENEDORA LIBERAL S R L"
+         "supplied_product_description":"Real Estate and Rental and Leasing",
+         "supplier_country_code":"US",
+         "supplier_description":"Provider Demo"
       }
    ],
    "company_transactionality":{
-      "funds_country_code":"DO",
-      "inc_monthly_movements":25,
-      "inc_transactionality":800000.0,
-      "inc_transactionality_currency_code":"DOP",
-      "out_monthly_movements":60,
-      "out_transactionality":300000.0,
-      "out_transactionality_currency_code":"DOP"
+      "funds_country_code":"US",
+      "inc_monthly_movements":2,
+      "inc_transactionality":1000000.0,
+      "inc_transactionality_currency_code":"USD",
+      "out_monthly_movements":3,
+      "out_transactionality":800000.0,
+      "out_transactionality_currency_code":"USD"
    },
    "company_treasurers":[
       {
-         "birth_date":"1951-08-30",
-         "document_issuing_country_code":"DO",
-         "document_number":"00200189314",
-         "document_type_code":"IDEN",
-         "first_name":"LEONIDAS",
-         "gender":"M",
-         "last_name":"NOVA",
-         "middle_last_name":"VALDEZ"
+         "birth_date":"2011-03-23",
+         "document_issuing_country_code":"US",
+         "document_number":"111555000",
+         "document_type_code":"SSN",
+         "email":"samira@dev.com",
+         "first_name":"SAMIRA",
+         "gender":"F",
+         "last_name":"GONZALEZ"
       }
    ]
 }
@@ -548,166 +529,237 @@ A continuación la descripción de cada campo:
 
 ```
 {
-   "company_branches":[
-      {
-         "description":"calle azul y morado",
-         "document_issuing_country_code":"DO",
-         "document_number":"101563281",
-         "document_type_code":"TXID",
-         "name":"INMOBILIARIA PARADISO SRL",
-         "neighbourhood_description":"Alcarrizos Viejo",
-         "phone_number":"8097081365",
-         "responsible_name":"VICTOR HIPOLITO SANCHEZ FELIZ"
-      }
-   ],
-   "company_business_type":{
-      "cash_expected_monthly_revenue_amount":500000.0,
-      "cash_expected_monthly_revenue_currency_code":"DOP",
-      "current_year_sales_amount":1900000.0,
-      "current_year_sales_currency_code":"DOP",
-      "employees_range":"1 a 20",
-      "last_year_sales_amount":5000000.0,
-      "last_year_sales_amount_currency_code":"DOP",
-      "product_description":"PRODUCTOS VEGETALES DE CULTIVO",
-      "product_unique_description":"vegetables"
-   },
-   "company_entity_branch":{
-      "branch_code":"2",
-      "branch_name":"Yamasa"
-   },
    "company_info":{
-      "acronym":"inmo",
-      "company_category_description":"Sociedad de Responsabilidad Limitada (SRL)",
-      "company_category_unique_name":"limited_liability_partnership",
-      "document_description":"101563281",
+      "additional_field1":"Value1",
+      "additional_field2":"Value2",
+      "additional_field3":"Value3",
+      "company_category_description":"Sociedad publica",
+      "company_category_unique_name":"public_society",
+      "document_description":"999-99999-9",
       "document_issuing_country_code":"DO",
       "document_type_code":"TXID",
-      "economic_activity_code":"702001",
-      "economic_activity_description":"Servicios inmobiliarios realizados a cambio de una retribución o por contrata (incluye compra, venta, alquiler, reate, tasación)",
-      "founding_date":"1991-02-26",
+      "economic_activity_code":"552111",
+      "economic_activity_description":"Servicios de restaurantes y cantinas sin espectáculos",
+      "founding_date":"2021-03-03",
+      "main_language":"Español",
       "is_financial_entity":false,
       "is_private_entity":true,
-      "main_language":"Español",
-      "name":"INMOBILIARIA PARADISO SRL",
+      "name":"VASOLY SRL",
       "registering_entity_country_code":"DO",
-      "registering_entity_name":"Dirección General de Impuestos Internos",
-      "registry_id":"12345SD",
+      "registering_entity_name":"DGII",
+      "registry_id":"131683045",
       "tax_residence_country_code":"DO",
-      "total_shares":0.0,
-      "url":"www.inmobiliaria.com",
+      "total_shares":70.0,
       "product_request_type":{
          "description":"Solicitud de Producto",
          "code":"product_request"
       }
    },
    "company_main_address":{
-      "city_description":"San Cristobal",
-      "neighbourhood_description":"5 De Abril",
-      "province_code":"2100",
-      "province_description":"San Cristobal",
-      "street":"calle prueba azul, #100",
+      "city_description":"Santo Domingo",
+      "neighbourhood_description":"Sabana Centro ",
+      "province_code":"3200",
+      "province_description":"Santo Domingo",
+      "street":"Av. Caonabo, Calle 8",
       "company_properties_owner": "REGINALD SCOTT",
       "company_properties_owner_phone": "13697741025",
       "company_properties_rent_amount": "3000.00",
-      "company_properties_type": "rented"
+      "company_properties_type": "rented",
    },
+   "company_alternate_accounts":[
+      {
+         "aba_routing":"3333333",
+         "account":"123456789",
+         "bank_name":"Banco Y"
+      }
+   ],
+   "company_business_type":{
+      "cash_expected_monthly_revenue_amount":2700000.0,
+      "cash_expected_monthly_revenue_currency_code":"DOP",
+      "current_year_sales_amount":3200000.0,
+      "current_year_sales_currency_code":"DOP",
+      "employees_range":"1 a 20",
+      "last_year_sales_amount":3000000.0,
+      "last_year_sales_amount_currency_code":"DOP",
+      "product_description":"PRODUCTOS VEGETALES DE CULTIVO",
+      "product_unique_description":"vegetables"
+   },
+   "company_suppliers":[
+      {
+         "supplied_product_description":"PRODUCTOS VEGETALES DE CULTIVO",
+         "supplier_country_code":"DO",
+         "supplier_description":"Elisabeth Lopez"
+      }
+   ],
+   "company_subsidiaries":[
+      {
+         "document_number":"888-88888-8",
+         "document_type_code":"TXID",
+         "issuing_country_code":"DO",
+         "subsidiary_name":"VASONEC SUPLY SRL",
+         "subsidiary_product_name":"PRODUCTOS ANIMALES CARNICOS"
+      }
+   ],
    "company_main_customers":[
       {
          "consumed_product_description":"PRODUCTOS VEGETALES DE CULTIVO",
          "main_customer_country_code":"DO",
-         "main_customer_description":"TEOFILO ROSARIO MARTINEZ"
+         "main_customer_description":"Sara Martinez"
+      }
+   ],
+   "company_transactionality":{
+      "inc_monthly_movements":22,
+      "inc_transactionality":2890000.0,
+      "inc_transactionality_currency_code":"DOP",
+      "out_monthly_movements":60,
+      "out_transactionality":1870000.0,
+      "out_transactionality_currency_code":"DOP",
+      "funds_country_code":"DO"
+   },
+   "company_branches":[
+      {
+         "description":"Calle los sauces",
+         "document_issuing_country_code":"DO",
+         "document_number":"7777777777",
+         "document_type_code":"TXID",
+         "name":"VASOLY SRL",
+         "neighbourhood_description":"Sabana Centro ",
+         "phone_number":"80972343452",
+         "responsible_name":"Elisabeth Martinez"
+      },
+      {
+         "description":"Romulo Betancourt",
+         "document_issuing_country_code":"DO",
+         "document_number":"666666666",
+         "document_type_code":"TXID",
+         "name":"Colmado Acla Ovrseas BF",
+         "neighbourhood_description":"Mirador Del Este ",
+         "phone_number":"948406632",
+         "responsible_name":"Andres Morales"
       }
    ],
    "company_managers":[
       {
-         "birth_date":"1957-09-30",
+         "birth_date":"1996-03-01",
          "document_issuing_country_code":"DO",
-         "document_number":"00500432463",
+         "document_number":"1234567890",
          "document_type_code":"IDEN",
-         "first_name":"MARIA",
+         "first_name":"ANDREA",
          "gender":"F",
-         "last_name":"TEJADA",
-         "middle_last_name":"HERNANDEZ",
-         "middle_name":"ALTAGRACIA"
+         "last_name":"ARAUJO"
+      }
+   ],
+   "company_treasurers":[
+      {
+         "birth_date":"1985-03-01",
+         "document_issuing_country_code":"DO",
+         "document_number":"05601222411",
+         "document_type_code":"IDEN",
+         "first_name":"ROSMEIRYS  ",
+         "gender":"F",
+         "last_name":"TINEO"
       },
       {
-         "birth_date":"1956-04-11",
+         "birth_date":"1996-03-01",
          "document_issuing_country_code":"DO",
-         "document_number":"00105030092",
+         "document_number":"12345678903",
          "document_type_code":"IDEN",
-         "first_name":"LUIS",
-         "gender":"M",
-         "last_name":"FERRY",
-         "middle_last_name":"ALMODOVAR",
-         "middle_name":"ARTURO"
+         "first_name":"ANDREA",
+         "gender":"F",
+         "last_name":"ARAUJO"
       }
    ],
    "company_partners":{
       "company_members":[
+         {
+            "address":"Calle los santos",
+            "company_members":[
 
+            ],
+            "document_description":"111-12345-6",
+            "document_issuing_country_code":"DO",
+            "document_type_code":"TXID",
+            "name":"VASOS DOMINICANOS CXA",
+            "person_members":[
+               {
+                  "birth_date":"2021-04-01",
+                  "customer_number":14808,
+                  "document_issuing_country_code":"DO",
+                  "document_number":"12312312312",
+                  "document_type_code":"IDEN",
+                  "first_name":"PABLO",
+                  "gender":"M",
+                  "last_name":"VIERA"
+               }
+            ]
+         },
+         {
+            "address":"Calle 2",
+            "company_members":[
+               {
+                  "address":"Calle las juanas",
+                  "company_members":[
+                     {
+                        "address":"av los soles",
+                        "company_members":[
+
+                        ],
+                        "document_description":"123-11111-1",
+                        "document_issuing_country_code":"DO",
+                        "document_type_code":"TXID",
+                        "name":"VASORI MAKE UP SRL",
+                        "person_members":[
+
+                        ]
+                     }
+                  ],
+                  "document_description":"444-33333-2",
+                  "document_issuing_country_code":"DO",
+                  "document_type_code":"TXID",
+                  "name":"VASOS DE BARRO",
+                  "person_members":[
+                     {
+                        "birth_date":"2021-04-01",
+                        "customer_number":14808,
+                        "document_issuing_country_code":"DO",
+                        "document_number":"12312312312",
+                        "document_type_code":"IDEN",
+                        "first_name":"PABLO",
+                        "gender":"M",
+                        "last_name":"VIERA"
+                     }
+                  ]
+               }
+            ],
+            "document_description":"321-54321-1",
+            "document_issuing_country_code":"DO",
+            "document_type_code":"TXID",
+            "name":"VASOS Y PLATOS CXA",
+            "person_members":[
+
+            ]
+         }
       ],
       "person_members":[
          {
-            "birth_date":"1972-10-07",
-            "document_issuing_country_code":"DO",
-            "document_number":"12100101901",
-            "document_type_code":"IDEN",
-            "first_name":"WELINGTON",
-            "gender":"F",
-            "last_name":"CABRERA",
-            "middle_last_name":"MERCEDES"
+            "birth_date":"1995-04-01",
+            "document_issuing_country_code":"VE",
+            "document_number":"045444444",
+            "document_type_code":"PAOR",
+            "first_name":"ANDRES",
+            "gender":"M",
+            "last_name":"MORALES"
          }
       ]
    },
-   "company_subsidiaries":[
-      {
-         "document_number":"101563281",
-         "document_type_code":"TXID",
-         "issuing_country_code":"DO",
-         "subsidiary_name":"INMOBILIARIA PARADISO SRL",
-         "subsidiary_product_name":"PRODUCTOS VEGETALES DE CULTIVO"
-      }
-   ],
-   "company_suppliers":[
-      {
-         "supplier_country_code":"DO",
-         "supplier_description":"JOWIS INTERNACIONAL C X A"
-      }
-   ],
-   "company_transactionality":{
-      "funds_country_code":"DO",
-      "inc_monthly_movements":20,
-      "inc_transactionality":250000.0,
-      "inc_transactionality_currency_code":"DOP",
-      "out_monthly_movements":26,
-      "out_transactionality":175000.0,
-      "out_transactionality_currency_code":"DOP"
-   },
-   "company_treasurers":[
-      {
-         "birth_date":"1961-02-12",
-         "document_issuing_country_code":"DO",
-         "document_number":"00102483146",
-         "document_type_code":"IDEN",
-         "first_name":"BOLIVAR",
-         "gender":"M",
-         "last_name":"MENA",
-         "middle_last_name":"LOZANO",
-         "middle_name":"GENARO"
-      },
-      {
-         "birth_date":"1954-01-29",
-         "document_issuing_country_code":"DO",
-         "document_number":"00105089536",
-         "document_type_code":"IDEN",
-         "first_name":"JUAN",
-         "gender":"M",
-         "last_name":"ROJAS",
-         "middle_last_name":"GUERRERO",
-         "middle_name":"FRANCISCO"
-      }
-   ]
+   "company_entity_branch":{
+      "branch_code":"01",
+      "branch_name":"NOMBRE SUCURSAL"
+   }
 }
+```
+
+</details>
 ```
 
 </details>
