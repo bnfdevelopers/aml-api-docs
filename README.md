@@ -7,7 +7,7 @@ coverY: 0
 
 ## Contenido
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td><a href="creation-update-person.md">Creación / Actualización de Clientes Persona Física</a></td><td></td></tr><tr><td></td><td><a href="creation-update-company.md">Creación / Actualización de Clientes Persona Jurídica</a></td><td></td></tr><tr><td></td><td><a href="product-creation.md">Creación de Productos</a></td><td></td></tr><tr><td><p></p><p><a href="transaction-inspector.md">Monitoreo de Transacciones</a></p></td><td></td><td></td></tr><tr><td><a href="static-data.md">Anexos</a></td><td></td><td></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td><a href="creation-update-person.md">Creación / Actualización de Clientes Persona Física</a></td><td></td></tr><tr><td></td><td><a href="creation-update-company.md">Creación / Actualización de Clientes Persona Jurídica</a></td><td></td></tr><tr><td></td><td><a href="product-creation.md">Creación de Productos</a></td><td></td></tr><tr><td><p></p><p><a href="transaction-inspector.md">Monitoreo de Transacciones</a></p></td><td></td><td></td></tr><tr><td><p></p><p><a href="static-data.md">Anexos</a></p></td><td></td><td></td></tr></tbody></table>
 
 ## Introducción
 
@@ -18,5 +18,7 @@ La Plataforma para Prevención de Lavado de Activos y Financiamiento al Terroris
 * **Envío de transacciones y carga de datos de clientes ocasionales.** La aplicación Transaction Inspector requiere ser alimentada con las transacciones que la institución decida monitorear. Para esto los sistemas de la institución deberán enviar los datos de la transacción donde se deben incluir los datos de los Clientes Ocasionales, por ejemplo el depositante. Este paso es necesario para ejecutar la correspondiente debida diligencia simplificada a estos terceros tal como lo indican las regulaciones. El envío de transacciones son servicios que Transaction Inspector habilita para ser invocados por los sistemas de la Institución.
 
 Para ver las actualizaciones y releases haz clic [aquí](CHANGELOG.md).&#x20;
+
+Para ver los anexos que contienen la información de los datos estáticos haz clic [aquí](static-data.md).
 
 A continuación se describen los diferentes servicios que deben ser implementados por las instituciones.
