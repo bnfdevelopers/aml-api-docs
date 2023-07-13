@@ -26,7 +26,9 @@
 
     * Agregados los campos: _annual_gross_salary, entry_date, professional_position, country_.
 
-    * En la actividad comercial adicional se agregaron los campos: _commercial_activity_code, commercial_activity_description, origin_income_.
+    * En la actividad comercial adicional se eliminaron los campos: _ciiu_.
+
+    * En la actividad comercial adicional se agregaron los campos: _commercial_activity_code, commercial_activity_description, origin_income, work_email_.
 
     * Agregado el objeto _previously_employment_data_. En caso de existir irá en el json de lo contrario no.
 
@@ -34,7 +36,7 @@
 
 * Nodo **client_references:**
 
-    * En las referencias bancarias se agregaron los campos _canceled y canceled_reason_.
+    * En las referencias bancarias se agregaron los campos _canceled, canceled_reason, aba_code, iban_code, swift_code_.
 
     * En las referencias personales se agregó los campos _country, reference_relationship_unique_description_.
 
