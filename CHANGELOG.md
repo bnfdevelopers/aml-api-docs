@@ -2,7 +2,7 @@
 
 ## Release: 2.0.1
 
-### Date: YYYY-MM-DD
+### Date: 2023-07-14
 
 ### CREACIÓN / ACTUALIZACIÓN DE CLIENTES PERSONA FÍSICA
 
@@ -12,7 +12,7 @@
 
     * Eliminado el objeto _product_request_type_.
 
-    * Agregado campo _other_dex_description_.
+    * Agregado campo _civil_status_unique_description, nickname, other_sex_description_.
 
 * Nodo **client_location:**
 
@@ -24,7 +24,7 @@
 
 * Nodo **client_job_info:**
 
-    * Agregados los campos: _annual_gross_salary, entry_date, professional_position, country_.
+    * Agregados los campos: _annual_gross_salary, entry_date, professional_position, country, work_email_.
 
     * En la actividad comercial adicional se eliminaron los campos: _ciiu_.
 
@@ -39,6 +39,8 @@
     * En las referencias bancarias se agregaron los campos _canceled, canceled_reason, aba_code, iban_code, swift_code_.
 
     * En las referencias personales se agregó los campos _country, reference_relationship_unique_description_.
+
+    * Se agregaron nuevos nodos: _first_client_commercial_reference, second_client_commercial_reference, first_supplier_commercial_reference, second_supplier_commercial_reference_
 
 * Nodo **client_transactionality:**
 
@@ -56,3 +58,8 @@
 * Nodo **company_main_address:**
 
     * Agregados los campos: _company_properties_type, company_properties_owner, company_properties_owner_phone, company_properties_rent_amount_. Los 3 últimos se muestran o no dependiendo si la propiedad es alquilada o propia.
+
+
+### CREACIÓN DE PRODUCTO
+
+* Agregado nuevo nodo: _related_client_info_ para indicar los datos de los relacionados o vinculados a una cuenta, dígase co-titulares o beneficiarios.
