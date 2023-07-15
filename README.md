@@ -3,22 +3,23 @@ cover: .gitbook/assets/Untitled design (1).png
 coverY: 0
 ---
 
-# DOCUMENTACIÓN API AML
+# AML API DOCUMENTATION
 
-## Contenido
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td><a href="creation-update-person.md">Creación / Actualización de Clientes Persona Física</a></td><td></td></tr><tr><td></td><td><a href="creation-update-company.md">Creación / Actualización de Clientes Persona Jurídica</a></td><td></td></tr><tr><td></td><td><a href="product-creation.md">Creación de Productos</a></td><td></td></tr><tr><td><p></p><p><a href="transaction-inspector.md">Monitoreo de Transacciones</a></p></td><td></td><td></td></tr><tr><td></td><td><a href="https://github.com/bnfdevelopers/aml-api-docs/tree/spanish">Github URL</a></td><td></td></tr><tr><td><p></p><p><a href="static-data.md">Anexos</a></p></td><td></td><td></td></tr></tbody></table>
+## Contents
 
-## Introducción
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td><a href="creation-update-person.md">Creation / Update of Natural Person Clients</a></td><td></td></tr><tr><td></td><td><a href="creation-update-company.md">Creation / Update of Legal Person Clients</a></td><td></td></tr><tr><td></td><td><a href="product-creation.md">Product Creation</a></td><td></td></tr><tr><td><p></p><p><a href="transaction-inspector.md">Transaction Monitoring</a></p></td><td></td><td></td></tr><tr><td></td><td><a href="https://github.com/bnfdevelopers/aml-api-docs/tree/englissh">Github URL</a></td><td></td></tr><tr><td><p></p><p><a href="static-data.md">Attachments</a></p></td><td></td><td></td></tr></tbody></table>
 
-La Plataforma para Prevención de Lavado de Activos y Financiamiento al Terrorismo de Better and Faster Tech Inc dispone de mecanismos para la integración con los sistemas de gestión, administración de clientes y transacciones (p.e. Core Bancario) para lograr la automatización de los procesos y el control de forma integral. Dentro de las funciones disponibles se incluyen:
+## Introduction
 
-* **Creación de clientes desde Clients Inspector hacia los sistemas de la entidad**. Una vez que los clientes son depurados y el Rol de Gerente autoriza su vinculación con la institución, Clients Inspector invocará las funciones descritas en este documento para que el cliente sea creado en los sistemas de la institución. Existen dos tipos de clientes que pueden ser creados desde Clients Inspector, Clientes Persona Física y Clientes Jurídicos o Compañías.
-* **Creación de productos desde Clients Inspector hacia los sistemas de la entidad**. La creación del producto se realiza después de la creación del cliente, siempre que la misma haya sido exitosa. El Rol Gerente verá una solicitud de creación de producto en su bandeja la cual debe aprobar. Clients inspector invocará las funciones descritas en este documento para que el cliente sea creado en los sistemas de la institución.
-* **Envío de transacciones y carga de datos de clientes ocasionales.** La aplicación Transaction Inspector requiere ser alimentada con las transacciones que la institución decida monitorear. Para esto los sistemas de la institución deberán enviar los datos de la transacción donde se deben incluir los datos de los Clientes Ocasionales, por ejemplo el depositante. Este paso es necesario para ejecutar la correspondiente debida diligencia simplificada a estos terceros tal como lo indican las regulaciones. El envío de transacciones son servicios que Transaction Inspector habilita para ser invocados por los sistemas de la Institución.
+The Anti-Money Laundering (AML) and Counter Financing of Terrorism (CFT) Platform provided by Better and Faster Tech Inc offers mechanisms for integration with management systems, customer administration, and transactions (e.g. Core Banking) to achieve process automation and comprehensive control. The available functions include:
 
-Para ver las actualizaciones y releases haz clic [aquí](CHANGELOG.md).&#x20;
+* **Creation of clients from Clients Inspector to the institution's systems**. Once clients are screened and authorized by the Manager role for their association with the institution, Clients Inspector will invoke the functions described in this document to create the client in the institution's systems. There are two types of clients that can be created from Clients Inspector: Natural Person Clients and Legal Person Clients (Companies).
+* **Creation of products from Clients Inspector to the institution's systems**. The product creation is done after the client creation, provided that it was successful. The Manager role will see a product creation request in their inbox, which they must approve. Clients Inspector will invoke the functions described in this document to create the product in the institution's systems.
+* **Sending transactions and loading occasional client data**. The Transaction Inspector application needs to be fed with the transactions that the institution decides to monitor. For this purpose, the institution's systems must send the transaction data, including the data of Occasional Clients, such as the depositor. This step is necessary to perform the corresponding simplified due diligence on these third parties, as indicated by the regulations. Transaction sending is a service enabled by Transaction Inspector to be invoked by the institution's systems.
 
-Para ver los anexos que contienen la información de los datos estáticos haz clic [aquí](static-data.md).
+To see the updates and releases, click [here](CHANGELOG.md).&#x20;
 
-A continuación se describen los diferentes servicios que deben ser implementados por las instituciones.
+To see the attachments containing information about static data, click [here](static-data.md).
+
+The following sections describe the different services that institutions must implement.

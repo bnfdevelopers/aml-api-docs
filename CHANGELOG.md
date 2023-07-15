@@ -4,62 +4,62 @@
 
 ### Date: 2023-07-14
 
-### CREACIÓN / ACTUALIZACIÓN DE CLIENTES PERSONA FÍSICA
+### CREATION / UPDATE OF NATURAL PERSON CLIENTS
 
-* Nodo **client_info**: 
+* Node **client_info**: 
 
-    * Eliminados los campos: _document_type_code, document_number, issuing_country_code, other_document_type_code, other_document_number, other_issuing_country_code_. Estos campos seràn enviados en un nuevo nodo llamado **client_documents** explicado más adelante.
+    * Removed fields: _document_type_code, document_number, issuing_country_code, other_document_type_code, other_document_number, other_issuing_country_code_. These fields will be sent in a new node called **client_documents**, explained later.
 
-    * Eliminado el objeto _product_request_type_.
+    * Removed the _product_request_type_ object.
 
-    * Agregado campo _civil_status_unique_description, nickname, other_sex_description_.
+    * Added field _civil_status_unique_description, nickname, other_sex_description_.
 
-* Nodo **client_location:**
+* Node **client_location:**
 
-    * Los campos _province_code, neighbourhood_description_ pueden no aparecer en el json dependiendo si el valor es null o no.
+    * The fields _province_code, neighbourhood_description_ may not appear in the JSON depending on whether the value is null or not.
 
-* Nodo **client_contact:**
+* Node **client_contact:**
 
-    * Eliminado los campos: _fax_.
+    * Removed field: _fax_.
 
-* Nodo **client_job_info:**
+* Node **client_job_info:**
 
-    * Agregados los campos: _annual_gross_salary, entry_date, professional_position, country, work_email_.
+    * Added fields: _annual_gross_salary, entry_date, professional_position, country, work_email_.
 
-    * En la actividad comercial adicional se eliminaron los campos: _ciiu_.
+    * Removed fields in additional commercial activity: _ciiu_.
 
-    * En la actividad comercial adicional se agregaron los campos: _commercial_activity_code, commercial_activity_description, origin_income, work_email_.
+    * Added fields in additional commercial activity: _commercial_activity_code, commercial_activity_description, origin_income, work_email_.
 
-    * Agregado el objeto _previously_employment_data_. En caso de existir irá en el json de lo contrario no.
+    * Added the object _previously_employment_data_. If it exists, it will be included in the JSON; otherwise, it will be omitted.
 
-    * Renombrado campo _ciiu_ por _occupation_code_.
+    * Renamed field _ciiu_ to _occupation_code_.
 
-* Nodo **client_references:**
+* Node **client_references:**
 
-    * En las referencias bancarias se agregaron los campos _canceled, canceled_reason, aba_code, iban_code, swift_code_.
+    * Added fields in bank references: _canceled, canceled_reason, aba_code, iban_code, swift_code_.
 
-    * En las referencias personales se agregó los campos _country, reference_relationship_unique_description_.
+    * Added fields in personal references: _country, reference_relationship_unique_description_.
 
-    * Se agregaron nuevos nodos: _first_client_commercial_reference, second_client_commercial_reference, first_supplier_commercial_reference, second_supplier_commercial_reference_
+    * Added new nodes: _first_client_commercial_reference, second_client_commercial_reference, first_supplier_commercial_reference, second_supplier_commercial_reference_.
 
-* Nodo **client_transactionality:**
+* Node **client_transactionality:**
 
-    * Agregado los campos _funds_country_code y funds_country_description_.
+    * Added fields _funds_country_code and funds_country_description_.
 
-* Nuevo nodo **client_documents:** Usado para enviar la información de los documentos de identidad ingresados por el cliente.
-
-
-### CREACIÓN / ACTUALIZACIÓN DE CLIENTES PERSONA JURÍDICA
-
-* Nodo **company_info:**
-
-    * Agregado los campos _acronym, is_private_entity, is_financial_entity_
-
-* Nodo **company_main_address:**
-
-    * Agregados los campos: _company_properties_type, company_properties_owner, company_properties_owner_phone, company_properties_rent_amount_. Los 3 últimos se muestran o no dependiendo si la propiedad es alquilada o propia.
+* New node **client_documents:** Used to send information about the identification documents provided by the client.
 
 
-### CREACIÓN DE PRODUCTO
+### CREATION / UPDATE OF LEGAL PERSON CLIENTS
 
-* Agregado nuevo nodo: _related_client_info_ para indicar los datos de los relacionados o vinculados a una cuenta, dígase co-titulares o beneficiarios.
+* Node **company_info:**
+
+    * Added fields _acronym, is_private_entity, is_financial_entity._
+
+* Node **company_main_address:**
+
+    * Added fields: _company_properties_type, company_properties_owner, company_properties_owner_phone, company_properties_rent_amount_. The last three fields are displayed or omitted depending on whether the property is rented or owned.
+
+
+### PRODUCT CREATION
+
+* Added new node: _related_client_info_ to indicate the data of individuals related or linked to an account, such as co-owners or beneficiaries.

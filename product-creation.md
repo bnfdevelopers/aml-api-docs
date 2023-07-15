@@ -1,49 +1,48 @@
 ---
-description: Servicio  tanto para persona física como persona jurídica.
+description: Service available for both natural person and legal person.
 cover: >-
   https://images.unsplash.com/photo-1423666639041-f56000c27a9a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwxfHxvbmxpbmUlMjBiYW5rfGVufDB8fHx8MTY3NTk4MzYyNg&ixlib=rb-4.0.3&q=80
 coverY: 187
 ---
 
 
-# Creación de Productos
+# Product Creation
 
-## Especificaciones
+## Specifications
 
-**URL del servicio:**
+**Service URL:**
 
 ```bash
 https://{URLCLIENTE}/core_product
 ```
 
-**Método:** POST
+**Method:** POST
 
-**Tipo de Autenticación:** Basic Authentication (Autenticación básica). Por seguridad, tienen que ser las mismas credenciales que en el servicio anterior.
+**Authentication Type:**  Basic Authentication. For security purposes, the same credentials as the previous service must be used.
 
-## **Parámetros de Entrada**
+## **Input Parameters**
 
-| NIVEL 1               | NIVEL 2                  | NIVEL 3                  | TIPO    | TAMAÑO | DESCRIPCIÓN                                                                                                                                |
-| --------------------- | ------------------------ | ------------------------ | ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| product\_code*        |                          |                          | varchar | 4      | Código del producto. Deben ser los mismos que el de la entidad                                                                             |
-| customer\_number*     |                          |                          | integer | -      | Número de cliente devuelto en servicio anterior                                                                                            |
-| open\_date*           |                          |                          | date    | -      | Fecha de apertura en formato YYYY-MM-DD                                                                                                    |
-| related\_client\_info |                          |                          | array   | -      | Listado de relacionados a la cuenta que se está creando.Pueden ser beneficiarios o cotitulares                                             |
-|                       | customer\_number         |                          | integer | -      | Número de cliente del relacionado o vinculado a la cuenta que posee en el core de la entidad                                               |
-|                       | related\_wisenroll\_code |                          | integer | -      | Código Wisenroll del relacionado o vinculado a la cuenta que posee en el core de la entidad                                                |
-|                       | account\_link\_type      |                          | varchar | 2      | Tipo de vinculación de esa persona a la cuenta. Revisar los valores en la sección de [anexos](static-data.md), tabla **Account Link Type** |
-|                       | authorized\_signature    |                          | integer | -      | Flag que indica si el vinculado es firmante o no de la cuenta: 1 en caso de ser True y 0 en caso de False                                  |
-|                       | main\_document           |                          | object  | -      | Objeto donde se indica información del documento del vinculado a la cuenta. Se envío como información adicional en caso de ser requerida   |
-|                       |                          | document\_type\_code     | varchar | 20     | Tipo de documento del vinculado                                                                                                            |
-|                       |                          | document\_number         | varchar | 20     | Número de documento del vinculado                                                                                                          |
-|                       |                          | issuing\_number\_code    | varchar | 2      | País emisor del documento en Alpha-2                                                                                                       |
+| LEVEL 1               | LEVEL 2                  | LEVEL 3                  | TYPE    | SIZE | DESCRIPTION                                                                                                                                |
+| --------------------- | ------------------------ | ------------------------ | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| product\_code*        |                          |                          | varchar | 4    | Product code. Must be the same as the entity's code                                                                                        |
+| customer\_number*     |                          |                          | integer | -    | Customer number returned in client creation service                                                                                        |
+| open\_date*           |                          |                          | date    | -    | Opening date in YYYY-MM-DD format                                                                                                          |
+| related\_client\_info |                          |                          | array   | -    | List of related accounts to be created. They can be beneficiaries or joint account holders                                                 |
+|                       | customer\_number         |                          | integer | -    | Customer number of the related account in the entity's core                                                                                |
+|                       | related\_wisenroll\_code |                          | integer | -    | Wisenroll code of the related account in the entity's core                                                                                 |
+|                       | account\_link\_type      |                          | varchar | 2    | Type of link between the person and the account. Check the values in the [Annex](static-data.md), table **Account Link Type**              |
+|                       | authorized\_signature    |                          | integer | -    | Flag indicating whether the related person is a signer of the account: 1 for True and 0 for False                                          |
+|                       | main\_document           |                          | object  | -    | Object indicating information about the related person's document. Sent as additional information if required                              |
+|                       |                          | document\_type\_code     | varchar | 20   | Document type of the related person                                                                                                        |
+|                       |                          | document\_number         | varchar | 20   | Document number of the related person                                                                                                      |
+|                       |                          | issuing\_number\_code    | varchar | 2    | Country issuing the document in Alpha-2 format                                                                                             |
 
-**Nota:** Los marcados con asterisco (\*) son los recomendados a que sean almacenados en el core. Los que no tengan esta marca pueden llegar con el valor de null, vacío (“”) o incluso no aparecer en el json. Se recomienda validar siempre si algún valor que no es marcado con asterisco está en el json o no para trabajarlo. 
-
-## Ejemplo
+**Note:** Parameters marked with an asterisk (\*) are recommended to be stored in the core. Those that do not have this mark may have a null value, an empty string ("") or may not appear in the JSON at all. It is recommended to always validate if a value that is not marked with an asterisk is present in the JSON or not in order to handle it.
+## Examples
 
 <details>
 
-<summary>Ejemplo 1 </summary>
+<summary>Example 1 </summary>
 
 ```
 {
@@ -57,7 +56,7 @@ https://{URLCLIENTE}/core_product
 
 <details>
 
-<summary>Ejemplo 2 </summary>
+<summary>Example 2 </summary>
 
 ```
 {
@@ -83,18 +82,18 @@ https://{URLCLIENTE}/core_product
 
 </details>
 
-## Respuestas por parte de la entidad
+## Responses from the entity
 
-La entidad deberá retornar, en formato JSON, el número de cuenta que le ha asignado a la persona física o jurídica con los siguientes http status codes:
+The entity should return, in JSON format, the account number assigned to the natural person or legal person with the following HTTP status codes:
 
-* **201** - Respuesta exitosa, cliente creado
-* **400** - Error asignando el producto al cliente. Deberá retornar el mensaje del error para ser mostrado en la aplicación.
+* **201** - Successful response, client created
+* **400** - Error assigning the product to the client. The error message should be returned to be displayed in the application
 
-## Ejemplos de respuestas
+## Response Examples
 
 <details>
 
-<summary>Ejemplo 1 - Caso exitoso (HTTP STATUS CODE 201)</summary>
+<summary>Example 1 - Successful case (HTTP STATUS CODE 201)</summary>
 
 ```
 {
@@ -106,11 +105,11 @@ La entidad deberá retornar, en formato JSON, el número de cuenta que le ha asi
 
 <details>
 
-<summary>Ejemplo 2 - Caso error (HTTP STATUS CODE 400)</summary>
+<summary>Example 2 - Error case (HTTP STATUS CODE 400)</summary>
 
 ```
 {
-	"message": "MENSAJE DEL MOTIVO DEL ERROR"
+	"message": "ERROR MESSAGE"
 }
 ```
 
