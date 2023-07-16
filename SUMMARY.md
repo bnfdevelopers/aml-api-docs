@@ -1,9 +1,9 @@
 # Table of contents
 
-* [DOCUMENTACIÓN API AML](README.md)
-* [Creación / Actualización de Clientes Persona Física](creation-update-person.md)
-* [Creación / Actualización de Clientes Jurídicos](creation-update-company.md)
-* [Creación de Productos](product-creation.md)
-* [Monitoreo de Transacciones](transaction-inspector.md)
-* [Actualizaciones / Releases](CHANGELOG.md)
-* [Anexos](static-data.md)
+* [AML API DOCUMENTATION](README.md)
+* [Creation / Update of Individual Clients](creation-update-person.md)
+* [Creation / Update of Legal Clients](creation-update-company.md)
+* [Product Creation](product-creation.md)
+* [Transaction Monitoring](transaction-inspector.md)
+* [Updates / Releases](CHANGELOG.md)
+* [Annexes](static-data.md)
