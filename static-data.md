@@ -1,5 +1,5 @@
-# Data estática
+# Static data
 
-Para encontrar los datos estáticos explicados en cada uno de los web services, dirigirse al drive público haciendo clic [AQUÍ](https://drive.google.com/drive/folders/1bD_OOVGEfESgrxEpEbGYq-Zn9zpemsmM?usp=sharing)
+To find the static data explained in each of the web services, go to the public drive by clicking [HERE](https://drive.google.com/drive/folders/1bD_OOVGEfESgrxEpEbGYq-Zn9zpemsmM?usp=sharing)
 
-> :warning: **IMPORTANTE:** Al momento de hacer la integración siempre referirse a la tabla cargada en dicho drive que corresponderá a la data más reciente. Puede darse el caso en que agreguemos más información y si descarga los archivos entonces puede que no tenga la versión actualizada.
+> :warning: **IMPORTANT:** When doing the integration, always refer to the table loaded in said drive, which will correspond to the most recent data. It may be the case that we add more information and if you download the files then you may not have the updated version.
