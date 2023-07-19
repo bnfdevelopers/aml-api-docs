@@ -22,7 +22,7 @@ https://{URLCLIENTE}/core_product
 
 ## **Input Parameters**
 
-| LEVEL 1               | LEVEL 2                  | LEVEL 3                  | TYPE    | SIZE | DESCRIPTION                                                                                                                                |
+| LEVEL 1               | LEVEL 2                  | LEVEL 3                  | TYPE    | LENGTH | DESCRIPTION                                                                                                                                |
 | --------------------- | ------------------------ | ------------------------ | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | product\_code*        |                          |                          | varchar | 4    | Product code. Must be the same as the entity's code                                                                                        |
 | customer\_number*     |                          |                          | integer | -    | Customer number returned in client creation service                                                                                        |

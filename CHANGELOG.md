@@ -53,11 +53,11 @@
 
 * Node **company_info:**
 
-    * Added fields _acronym, is_private_entity, is_financial_entity._
+    * Added fields _acronym, is_private_entity, is_financial_entity, main_email, url_.
 
 * Node **company_main_address:**
 
-    * Added fields: _company_properties_type, company_properties_owner, company_properties_owner_phone, company_properties_rent_amount_. The last three fields are displayed or omitted depending on whether the property is rented or owned.
+    * Added fields: _postal_code, country_code, country_description, locality_code, locality_description, company_properties_type, company_properties_owner, company_properties_owner_phone, company_properties_rent_amount_. The last three fields are displayed or omitted depending on whether the property is rented or owned.
 
 
 ### PRODUCT CREATION

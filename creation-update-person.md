@@ -13,7 +13,7 @@ In order to create clients in the core of the financial institution, it is neces
 **Service URL:**
 
 ```bash
-https://{CUSTOMERURL}/core_customer
+https://{ENTITY_CLIENT_URL}/core_customer
 ```
 
 **Method:** POST
@@ -37,7 +37,7 @@ We will divide the JSON structure (key-value) into three levels: level 1, level 
 
 A continuación la descripción de cada campo:
 
-| LEVEL 1                  | LEVEL 2                           | LEVEL 3                       | TYPE    | SIZE   | DESCRIPTION                                                                                                                                                                                                                                                                      |
+| LEVEL 1                  | LEVEL 2                           | LEVEL 3                       | TYPE    | LENGTH | DESCRIPTION                                                                                                                                                                                                                                                                      |
 | ------------------------ | --------------------------------- | ----------------------------- | ------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | client\_info             | first\_name\*                     |                               | varchar | 30     | Customer first name                                                                                                                                                                                                                                                              |
 |                          | middle\_name                      |                               | varchar | 30     | Second name of the customer                                                                                                                                                                                                                                                      |
