@@ -24,7 +24,7 @@
 
 * Node **client_job_info:**
 
-    * Added fields: _annual_gross_salary, entry_date, professional_position, country, work_email_.
+    * Added the fields: _annual_gross_salary, entry_date, professional_position, work_email, company_country_code, company_country_description, country_description (in other_job_info)_.
 
     * Removed fields in additional commercial activity: _ciiu_.
 

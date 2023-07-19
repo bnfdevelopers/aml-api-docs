@@ -98,7 +98,8 @@ A continuación la descripción de cada campo:
 |                          | net\_income\*                     |                               | float   | -      | Net Monthly Income                                                                                                                                                                                                                                                               |
 |                          | currency\_code\*                  |                               | varchar | 4      | Currency code. See Annexes [here](static-data.md)                                                                                                                                                                                                                                |
 |                          | company\_name                     |                               | varchar | 100    | Name of the company where the client works                                                                                                                                                                                                                                       |
-|                          | country*                          |                               | varchar | 50     | Country where the company is located                                                                                                                                                                                                                                             |
+|                          | company\_country\_code*           |                               | varchar | 2      | Country code in Alpha-2 where the company is located                                                                                                                                                                                                                             |
+|                          | company\_country\_description*    |                               | varchar | 20     | Name of the country where the company is located                                                                                                                                                                                                                                 |
 |                          | work\_address\*                   |                               | varchar | 150    | Work address                                                                                                                                                                                                                                                                     |
 |                          | work\_email                       |                               | varchar | 100    | Work email                                                                                                                                                                                                                                                                       |
 |                          | entry\_date\*                     |                               | date    | -      | Date of entry into the company. Format YYYY-MM-DD                                                                                                                                                                                                                                |
@@ -109,6 +110,7 @@ A continuación la descripción de cada campo:
 |                          |                                   | commercial\_activity\_code    | varchar | 6      | Additional commercial activity code. This information comes from the activities uploaded to the GIR platform.                                                                                                                                                                    |
 |                          |                                   | commercial\_activity\_description    | text | -  | Description of the additional commercial activity.                                                                                                                                                                                                                               |
 |                          |                                   | country\_code                 | varchar | 2      | Country of business                                                                                                                                                                                                                                                              |
+|                          |                                   | country\_description          | varchar | 20     | Business Country Name                                                                                                                                                                                                                                                            |
 |                          |                                   | quantity\_of\_employees       | integer | -      | Quantity of employees                                                                                                                                                                                                                                                            |
 |                          |                                   | total\_assets                 | float   | -      | Total amount of assets                                                                                                                                                                                                                                                           |
 |                          |                                   | income\_in\_another\_currency | float   | -      | Income in another currency expressed in USD. Default is 0                                                                                                                                                                                                                        |
@@ -243,14 +245,16 @@ if data.get('client_job_info').get('previously_employment_data'):
          "income_in_another_currency":10000.0,
          "commercial_activity_code":"541810",
          "country_code":"US",
+         "country_description":"United States",
          "commercial_activity_description":"Advertising Agencies"
       },
       "professional_position":"Software Developer Senior",
       "annual_gross_salary":100000.0,
       "occupation_code":"151252",
-      "country":"Estados Unidos",
       "entry_date":"2020-02-21",
       "company_name":"TECH GROUP LLC",
+      "company_country_code":"US",
+      "company_country_description":"United States",
       "work_address":"601 Brickell Key Drive, Miami, FL 33131",
       "occupation_description":"Software Developers",
       "work_email":"luis@business.com",
@@ -406,6 +410,7 @@ if data.get('client_job_info').get('previously_employment_data'):
       "entry_date":"2022-04-20",
       "company_name":"AdSolutions Plus",
       "company_country_code":"DO",
+      "company_country_description":"Dominican Republic",
       "work_address":"Avenida Winston Churchill #654, Santo Domingo 10106",
       "occupation_description":"Advertising Sales Agents",
       "currency_code":"USD",
@@ -545,7 +550,8 @@ if data.get('client_job_info').get('previously_employment_data'):
       "currency_code":"USD",
       "entry_date":"2019-08-01",
       "company_name":"COMPANY TEST LLC",
-      "company_country_code":"DO",
+      "company_country_code":"US",
+      "company_country_description":"United States",
       "work_address":"5678 Maple Avenue, San Francisco, CA 94101",
       "occupation_description":"Civil Engineers",
       "work_email":"david@business.com",
