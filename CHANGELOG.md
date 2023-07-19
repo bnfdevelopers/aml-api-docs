@@ -53,12 +53,23 @@
 
 * Nodo **company_info:**
 
-    * Agregado los campos _acronym, is_private_entity, is_financial_entity_
+    * Agregado los campos _acronym, is_private_entity, is_financial_entity, main_email, url_
 
 * Nodo **company_main_address:**
 
-    * Agregados los campos: _company_properties_type, company_properties_owner, company_properties_owner_phone, company_properties_rent_amount_. Los 3 últimos se muestran o no dependiendo si la propiedad es alquilada o propia.
+    * Agregados los campos: _postal_code, country_code, country_description, locality_code, locality_description, company_properties_type, company_properties_owner, company_properties_owner_phone, company_properties_rent_amount_. Los 3 últimos se muestran o no dependiendo si la propiedad es alquilada o propia.
 
+* Nodo **company_partners:**
+
+    * En person_members agregados los campos: _birth_date and email_.
+
+* Nodo **company_treasurers:**
+
+    * Agregados los campos: _birth_date and email_.
+
+* Nodo **company_branches:**
+
+    * Agregado el campo: _extension_.
 
 ### CREACIÓN DE PRODUCTO
 
