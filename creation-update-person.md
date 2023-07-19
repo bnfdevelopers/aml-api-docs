@@ -95,20 +95,22 @@ A continuación la descripción de cada campo:
 |                          | social\_network\_username         |                               | varchar | 30     | Usuario de red social                                                                                                                                                                                                                                                            |
 | client\_job\_info        | salary\*                          |                               | float   | -      | Monto de salario                                                                                                                                                                                                                                                                 |
 |                          | annual\_gross\_salary\*           |                               | float   | -      | Salario Bruto Anual                                                                                                                                                                                                                                                              |
-|                          | net\_income\*                     |                               | float   | -      | Ingreso Neto Mensual                                                                                                                                                                                                                                                                    |
+|                          | net\_income\*                     |                               | float   | -      | Ingreso Neto Mensual                                                                                                                                                                                                                                                             |
 |                          | currency\_code\*                  |                               | varchar | 4      | Código de moneda. Ver Anexos [aquí](static-data.md)                                                                                                                                                                                                                              |
 |                          | company\_name                     |                               | varchar | 100    | Nombre de la compañía donde labora el cliente                                                                                                                                                                                                                                    |
-|                          | country*                          |                               | varchar | 50     | País donde está ubicado la compañía                                                                                                                                                                                                                                              |
+|                          | company\_country\_code*           |                               | varchar | 2      | Código de país en Alpha-2 donde se encuentra ubicada la compañía                                                                                                                                                                                                                 |
+|                          | company\_country\_description*    |                               | varchar | 20     | Nombre del país donde se encuentra ubicada la compañía                                                                                                                                                                                                                           |
 |                          | work\_address\*                   |                               | varchar | 150    | Dirección de trabajo                                                                                                                                                                                                                                                             |
-|                          | work\_email                       |                               | varchar | 100    | Correo electrónico del trabajo                                                                                                                                                                                                                                                             |
+|                          | work\_email                       |                               | varchar | 100    | Correo electrónico del trabajo                                                                                                                                                                                                                                                   |
 |                          | entry\_date\*                     |                               | date    | -      | Fecha de ingreso a la compañía. Formato YYYY-MM-DD                                                                                                                                                                                                                               |
 |                          | professional\_position\*          |                               | varchar | 100    | Cargo dentro de la empresa                                                                                                                                                                                                                                                       |
-|                          | occupation\_code\*                |                               | varchar | 50     | Código de la ocupación. Para el caso de Dominicana será el código CIIU                                                                                                                                                                                                                                                           |
+|                          | occupation\_code\*                |                               | varchar | 50     | Código de la ocupación. Para el caso de Dominicana será el código CIIU                                                                                                                                                                                                           |
 |                          | occupation\_description\*         |                               | text    | -      | Descripción de la ocupación                                                                                                                                                                                                                                                      |
 |                          | other\_job\_info                  |                               | object  | -      | Información de datos laborales adicionales del cliente                                                                                                                                                                                                                           |
 |                          |                                   | commercial\_activity\_code    | varchar | 6      | Código de la actividad comercial adicional. Esta información proviene las actividades cargadas en la plataforma GIR.                                                                                                                                                             |
 |                          |                                   | commercial\_activity\_description    | text | -  | Descripción de la actividad comercial adicional.                                                                                                                                                                                                                                 |
-|                          |                                   | country\_code                 | varchar | 2      | País de negocio                                                                                                                                                                                                                                                                  |
+|                          |                                   | country\_code                 | varchar | 2      | Código de País de negocio                                                                                                                                                                                                                                                        |
+|                          |                                   | country\_description          | varchar | 20     | Nombre del País de negocio                                                                                                                                                                                                                                                       |
 |                          |                                   | quantity\_of\_employees       | integer | -      | Cantidad de empleados                                                                                                                                                                                                                                                            |
 |                          |                                   | total\_assets                 | float   | -      | Monto total de los activos                                                                                                                                                                                                                                                       |
 |                          |                                   | income\_in\_another\_currency | float   | -      | Ingresos en otra moneda expresado en USD. Por defecto es 0.                                                                                                                                                                                                                      |
@@ -248,7 +250,8 @@ if data.get('client_job_info').get('previously_employment_data'):
       "professional_position":"Software Developer Senior",
       "annual_gross_salary":100000.0,
       "occupation_code":"151252",
-      "country":"Estados Unidos",
+      "company_country_code":"US",
+      "company_country_description":"Estados Unidos",
       "entry_date":"2020-02-21",
       "company_name":"TECH GROUP LLC",
       "work_address":"601 Brickell Key Drive, Miami, FL 33131",
@@ -406,6 +409,7 @@ if data.get('client_job_info').get('previously_employment_data'):
       "entry_date":"2022-04-20",
       "company_name":"AdSolutions Plus",
       "company_country_code":"DO",
+      "company_country_description":"República Dominicana",
       "work_address":"Avenida Winston Churchill #654, Santo Domingo 10106",
       "occupation_description":"Advertising Sales Agents",
       "currency_code":"USD",
@@ -488,9 +492,6 @@ if data.get('client_job_info').get('previously_employment_data'):
       "nationality_code":"US",
       "civil_status_description":"Casado(a)",
       "sex":"M",
-      "office_representative":"VME",
-      "bonding_type":"NI",
-      "business_code":"L003",
       "birth_date":"1988-12-27",
       "civil_status_id":2,
       "wisenroll_code":"LH0KN3",
@@ -546,6 +547,7 @@ if data.get('client_job_info').get('previously_employment_data'):
       "entry_date":"2019-08-01",
       "company_name":"COMPANY TEST LLC",
       "company_country_code":"DO",
+      "company_country_description":"República Dominicana",
       "work_address":"5678 Maple Avenue, San Francisco, CA 94101",
       "occupation_description":"Civil Engineers",
       "work_email":"david@business.com",

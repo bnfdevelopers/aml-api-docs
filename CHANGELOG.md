@@ -24,7 +24,9 @@
 
 * Nodo **client_job_info:**
 
-    * Agregados los campos: _annual_gross_salary, entry_date, professional_position, country, work_email_.
+    * Agregados los campos: _annual_gross_salary, entry_date, professional_position, country, work_email, company_country_code, company_country_description, country_description (en other_job_info)_.
+
+    * Eliminado campo: _country_.
 
     * En la actividad comercial adicional se eliminaron los campos: _ciiu_.
 
@@ -59,18 +61,17 @@
 
     * Agregados los campos: _postal_code, country_code, country_description, locality_code, locality_description, company_properties_type, company_properties_owner, company_properties_owner_phone, company_properties_rent_amount_. Los 3 últimos se muestran o no dependiendo si la propiedad es alquilada o propia.
 
-* Nodo **company_partners:**
+* Node **company_partners:**
 
-    * En person_members agregados los campos: _birth_date and email_.
+     * In person_members added the fields: _birth_date and email_.
 
-* Nodo **company_treasurers:**
+* Node **company_treasurers:**
 
-    * Agregados los campos: _birth_date and email_.
+     * Added the fields: _birth_date and email_.
 
-* Nodo **company_branches:**
+* Node **company_branches:**
 
-    * Agregado el campo: _extension_.
-
+     * Added the field: _extension_.
 ### CREACIÓN DE PRODUCTO
 
 * Agregado nuevo nodo: _related_client_info_ para indicar los datos de los relacionados o vinculados a una cuenta, dígase co-titulares o beneficiarios.
