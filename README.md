@@ -7,7 +7,7 @@ coverY: 0
 
 ## Contents
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td><a href="creation-update-person.md">Creation / Update of Natural Person Clients</a></td><td></td></tr><tr><td></td><td><a href="creation-update-company.md">Creation / Update of Legal Person Clients</a></td><td></td></tr><tr><td></td><td><a href="product-creation.md">Product Creation</a></td><td></td></tr><tr><td><a href="transaction-inspector.md">Transaction Monitoring</a></td><td></td><td></td></tr><tr><td></td><td><a href="https://github.com/bnfdevelopers/aml-api-docs/tree/english">Github URL</a></td><td></td></tr><tr><td><a href="static-data.md">Attachments</a></td><td></td><td></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td><a href="creation-update-person.md">Creation / Update of Natural Person Clients</a></td><td></td></tr><tr><td></td><td><a href="creation-update-company.md">Creation / Update of Company Clients</a></td><td></td></tr><tr><td></td><td><a href="product-creation.md">Product Creation</a></td><td></td></tr><tr><td><a href="transaction-inspector.md">Transaction Monitoring</a></td><td></td><td></td></tr><tr><td></td><td><a href="https://github.com/bnfdevelopers/aml-api-docs/tree/english">Github URL</a></td><td></td></tr><tr><td><a href="static-data.md">Attachments</a></td><td></td><td></td></tr></tbody></table>
 
 ## Introduction
 

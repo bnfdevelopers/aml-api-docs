@@ -46,8 +46,9 @@ A continuación la descripción de cada campo:
 | ---------------------------- | ------------------------------------------------ | --------------------------------- | ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | company\_info                | name\*                                           |                                   | varchar | 250    | Company name                                                                                                                                                                                                                          |
 |                              | alternate\_name                                  |                                   | varchar | 250    | Alternative company name                                                                                                                                                                                                              |
-|                              | acronym                                          |                                   | varchar | 100    | company acronym                                                                                                                                                                                                                       |
-|                              | founding\_date\*                                 |                                   | date    | -      | Fecha de constitución en formato: YYYY-MM-DD                                                                                                                                                                                          |
+|                              | acronym                                          |                                   | varchar | 100    | Company acronym                                                                                                                                                                                                                       |
+|                              | founding\_date\*                                 |                                   | date    | -      | Founding date in format: YYYY-MM-DD                                                                                                                                                                                                   |
+|                              | code                                             |                                   | varchar | 6      | Company code assigned by the platform                                                                                                                                                                                                 |
 |                              | main\_language                                   |                                   | varchar | 100    | Language of main use. Example: Spanish, English, etc                                                                                                                                                                                  |
 |                              | main\_email                                      |                                   | varchar | 60     | company mail                                                                                                                                                                                                                          |
 |                              | url                                              |                                   | varchar | 200    | Company website                                                                                                                                                                                                                       |
@@ -204,6 +205,7 @@ A continuación la descripción de cada campo:
       "founding_date":"2012-07-12",
       "company_category_unique_name":"limited_liability_partnership",
       "name":"SYNTHEX SYSTEMS",
+      "code":"2GAf13",
       "url":"synthex.com",
       "document_issuing_country_code":"US",
       "economic_activity_description":"Space Research and Technology",
@@ -385,6 +387,7 @@ A continuación la descripción de cada campo:
       "main_email":"property@example.com",
       "url": "propertycorp.com",
       "name":"Property Company",
+      "code":"BG3h43",
       "is_financial_entity":false,
       "is_private_entity":true,
       "product_request_type":{
@@ -500,6 +503,7 @@ A continuación la descripción de cada campo:
       "founding_date":"2021-03-03",
       "main_language":"English",
       "name":"VASOLY SRL",
+      "code":"35Kcd4",
       "main_email":"vasoly@example.com",
       "url": "vasoly.com",
       "registering_entity_country_code":"DO",
