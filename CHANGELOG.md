@@ -24,7 +24,7 @@
 
 * Nodo **client_job_info:**
 
-    * Agregados los campos: _annual_gross_salary, entry_date, professional_position, work_email, company_country_code, company_country_description, country_description (en other_job_info)_.
+    * Agregados los campos: _company_code, annual_gross_salary, entry_date, professional_position, work_email, company_country_code, company_country_description, country_description (en other_job_info)_.
 
     * Eliminado campo: _country_.
 
@@ -55,7 +55,7 @@
 
 * Nodo **company_info:**
 
-    * Agregado los campos _acronym, is_private_entity, is_financial_entity, main_email, url_
+    * Agregado los campos _acronym, is_private_entity, is_financial_entity, main_email, url, code_
 
 * Nodo **company_main_address:**
 
