@@ -84,20 +84,55 @@ https://{URLCLIENTE}/core_product
 
 ## Responses from the entity
 
-The entity should return, in JSON format, the account number assigned to the natural person or legal person with the following HTTP status codes:
+The entity must respond a JSON with the following http status codes:
 
-* **201** - Successful response, client created
-* **400** - Error assigning the product to the client. The error message should be returned to be displayed in the application
+* **201** - Successful response, account(s)/product(s) created
+* **400** - Error assigning the account(s)/product(s) to the customer The error message should be returned to be displayed in the application
 
-## Response Examples
+The JSON must follow the following format:
+
+| LEVEL 1               | LEVEL 2                  | TYPE    | SIZE   | DESCRIPTION                                                                                                            |
+| --------------------- | ------------------------ | ------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
+| account\_info*        |                          | array   |   -    | List of objects that contain the information of the accounts/products generated to the customer                        |
+|                       | action                   | varchar |   -    | Assign the value **CREATE** for successful creation. In case of error assign the value **ERROR**                       |
+|                       | account_product          | varchar |   10   | Subproduct code generated to the account                                                                               |
+|                       | account_number           | varchar |   20   | Account number                                                                                                         |
+|                       | message                  | text    |   -    | In case the value of the **action** field is **ERROR**, indicate the error message in this field                       |
+
+**Notes:** The _**account_product**_ and _**account_number**_ fields must be sent when the action field is **CREATE**. In case of **ERROR** the _**message**_ field is required.
+
+## Sample answers
 
 <details>
 
-<summary>Example 1 - Successful case (HTTP STATUS CODE 201)</summary>
+<summary>Example - Successful cases (HTTP STATUS CODE 201)</summary>
 
 ```
 {
-	"account_number": “00100002202”
+    "accounts_info":[
+       {
+          "action":"CREATE",
+          "account_product":"SAV1",
+          "account_number":"000201000903"
+       }
+    ]
+}
+```
+
+```
+{
+    "accounts_info":[
+       {
+          "action":"CREATE",
+          "account_product":"SAV1",
+          "account_number":"000201000903"
+       },
+	   {
+          "action":"CREATE",
+          "account_product":"SAV2",
+          "account_number":"000221000148"
+       }
+    ]
 }
 ```
 
@@ -105,11 +140,17 @@ The entity should return, in JSON format, the account number assigned to the nat
 
 <details>
 
-<summary>Example 2 - Error case (HTTP STATUS CODE 400)</summary>
+<summary>Example - Error case (HTTP STATUS CODE 400)</summary>
 
 ```
 {
-	"message": "ERROR MESSAGE"
+    "accounts_info":[
+       {
+          "action":"ERROR",
+          "account_product":"NOW2",
+          "message":"ERROR MESSAGE"
+       }
+    ]
 }
 ```
 

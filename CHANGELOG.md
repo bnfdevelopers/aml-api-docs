@@ -63,3 +63,5 @@
 ### PRODUCT CREATION
 
 * Added new node: _related_client_info_ to indicate the data of individuals related or linked to an account, such as co-owners or beneficiaries.
+
+* New response format.
