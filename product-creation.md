@@ -85,20 +85,55 @@ https://{URLCLIENTE}/core_product
 
 ## Respuestas por parte de la entidad
 
-La entidad deberá retornar, en formato JSON, el número de cuenta que le ha asignado a la persona física o jurídica con los siguientes http status codes:
+La entidad deberá responder un JSON con los siguientes http status codes:
 
-* **201** - Respuesta exitosa, cliente creado
-* **400** - Error asignando el producto al cliente. Deberá retornar el mensaje del error para ser mostrado en la aplicación.
+* **201** - Respuesta exitosa, cuenta(s)/producto(s) creadas
+* **400** - Error asignando el cuenta(s)/producto(s) al cliente. Deberá retornar el mensaje del error para ser mostrado en la aplicación.
+
+El JSON deberá seguir el siguiente formato:
+
+| NIVEL 1               | NIVEL 2                  | TIPO    | TAMAÑO | DESCRIPCIÓN                                                                                                            | 
+| --------------------- | ------------------------ | ------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
+| account\_info*        |                          | array   |   -    | Lista de objectos que contienen la información de las cuentas/productos generaros al cliente                           |
+|                       | action                   | varchar |   -    | Asignar el valor **CREATE** para creación exitosa. En caso de error asignar el valor **ERROR**                         |
+|                       | account_product          | varchar |   10   | Código de subproducto de la cuenta/producto generado                                                                   |
+|                       | account_number           | varchar |   20   | Número de cuenta                                                                                                       |
+|                       | message                  | text    |   -    | En caso en que el valor del campo **action** sea **ERROR**, indicar el mensaje de error en este campo                  |
+
+**Notas:** Los campos _**account_product**_ y _**account_number**_ deben ser enviados cuando el campo de action sea **CREATE**. En caso de **ERROR** se requiere el campo _**message**_.
 
 ## Ejemplos de respuestas
 
 <details>
 
-<summary>Ejemplo 1 - Caso exitoso (HTTP STATUS CODE 201)</summary>
+<summary>Ejemplo - Casos exitosos (HTTP STATUS CODE 201)</summary>
 
 ```
 {
-	"account_number": “00100002202”
+   "accounts_info":[
+      {
+         "action":"CREATE",
+         "account_product":"SAV1",
+         "account_number":"000201000903"
+      }
+   ]
+}
+```
+
+```
+{
+    "accounts_info":[
+       {
+          "action":"CREATE",
+          "account_product":"SAV1",
+          "account_number":"000201000903"
+       },
+	   {
+          "action":"CREATE",
+          "account_product":"SAV2",
+          "account_number":"000221000148"
+       }
+    ]
 }
 ```
 
@@ -106,11 +141,17 @@ La entidad deberá retornar, en formato JSON, el número de cuenta que le ha asi
 
 <details>
 
-<summary>Ejemplo 2 - Caso error (HTTP STATUS CODE 400)</summary>
+<summary>Ejemplo - Caso error (HTTP STATUS CODE 400)</summary>
 
 ```
 {
-	"message": "MENSAJE DEL MOTIVO DEL ERROR"
+   "accounts_info":[
+      {
+         "action":"ERROR",
+         "account_product":"NOW2",
+         "message":"MENSAJE DE ERROR"
+      }
+   ]
 }
 ```
 

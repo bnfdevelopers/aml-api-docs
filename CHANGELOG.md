@@ -75,3 +75,5 @@
 ### CREACIÓN DE PRODUCTO
 
 * Agregado nuevo nodo: _related_client_info_ para indicar los datos de los relacionados o vinculados a una cuenta, dígase co-titulares o beneficiarios.
+
+* Nuevo formato de respuesta.
