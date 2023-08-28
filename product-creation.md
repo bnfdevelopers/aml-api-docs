@@ -94,13 +94,13 @@ El JSON deberá seguir el siguiente formato:
 
 | NIVEL 1               | NIVEL 2                  | TIPO    | TAMAÑO | DESCRIPCIÓN                                                                                                            | 
 | --------------------- | ------------------------ | ------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
-| account\_info*        |                          | array   |   -    | Lista de objectos que contienen la información de las cuentas/productos generaros al cliente                           |
-|                       | action                   | varchar |   -    | Asignar el valor **CREATE** para creación exitosa. En caso de error asignar el valor **ERROR**                         |
-|                       | account_product          | varchar |   10   | Código de subproducto de la cuenta/producto generado                                                                   |
+| account\_info*        |                          | array   |   -    | Lista de objectos que contienen la información de las cuentas/productos generaros al cliente o los que dieron error    |
+|                       | action*                  | varchar |   -    | Asignar el valor **CREATE** para creación exitosa. En caso de error asignar el valor **ERROR**                         |
+|                       | account_product*         | varchar |   10   | Código de subproducto de la cuenta/producto generado. En caso de de error, indicar de igual manera dicho código        |
 |                       | account_number           | varchar |   20   | Número de cuenta                                                                                                       |
-|                       | message                  | text    |   -    | En caso en que el valor del campo **action** sea **ERROR**, indicar el mensaje de error en este campo                  |
+|                       | message*                 | text    |   -    | En caso en que el valor del campo **action** sea **ERROR**, indicar el mensaje de error en este campo                  |
 
-**Notas:** Los campos _**account_product**_ y _**account_number**_ deben ser enviados cuando el campo de action sea **CREATE**. En caso de **ERROR** se requiere el campo _**message**_.
+**Notas:** Los campos _**account_product**_ y _**account_number**_ deben ser enviados cuando el campo de action sea **CREATE**. En caso de **ERROR** se requieren los campos _**account_product**_ y _**message**_.
 
 ## Ejemplos de respuestas
 
@@ -145,13 +145,18 @@ El JSON deberá seguir el siguiente formato:
 
 ```
 {
-   "accounts_info":[
-      {
-         "action":"ERROR",
-         "account_product":"NOW2",
-         "message":"MENSAJE DE ERROR"
-      }
-   ]
+    "accounts_info":[
+       {
+          "action":"ERROR",
+          "account_product":"NOW1",
+          "message":"MENSAJE DE ERROR"
+       },
+	   {
+          "action":"ERROR",
+          "account_product":"NOW3",
+          "message":"MENSAJE DE ERROR"
+       }
+    ]
 }
 ```
 
