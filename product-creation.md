@@ -91,15 +91,15 @@ The entity must respond a JSON with the following http status codes:
 
 The JSON must follow the following format:
 
-| LEVEL 1               | LEVEL 2                  | TYPE    | SIZE   | DESCRIPTION                                                                                                            |
-| --------------------- | ------------------------ | ------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
-| account\_info*        |                          | array   |   -    | List of objects that contain the information of the accounts/products generated to the customer                        |
-|                       | action                   | varchar |   -    | Assign the value **CREATE** for successful creation. In case of error assign the value **ERROR**                       |
-|                       | account_product          | varchar |   10   | Subproduct code generated to the account                                                                               |
-|                       | account_number           | varchar |   20   | Account number                                                                                                         |
-|                       | message                  | text    |   -    | In case the value of the **action** field is **ERROR**, indicate the error message in this field                       |
+| LEVEL 1               | LEVEL 2                  | TYPE    | SIZE   | DESCRIPTION                                                                                                              |
+| --------------------- | ------------------------ | ------- | ------ | ------------------------------------------------------------------------------------------------------------------------ |
+| account\_info*        |                          | array   |   -    | List of objects that contain the information of the accounts/products that generate the customer or those that gave error|
+|                       | action                   | varchar |   -    | Assign the value **CREATE** for successful creation. In case of error assign the value **ERROR**                         |
+|                       | account_product          | varchar |   10   | Subproduct code generated to the account. In case of error, indicate the code in the same way                            |
+|                       | account_number           | varchar |   20   | Account number                                                                                                           |
+|                       | message                  | text    |   -    | In case the value of the **action** field is **ERROR**, indicate the error message in this field                         |
 
-**Notes:** The _**account_product**_ and _**account_number**_ fields must be sent when the action field is **CREATE**. In case of **ERROR** the _**message**_ field is required.
+**Notes:** The _**account_product**_ and _**account_number**_ fields must be sent when the action field is **CREATE**. In case of **ERROR** the fields _**account_product**_ and _**message**_ are required.
 
 ## Sample answers
 
@@ -147,7 +147,12 @@ The JSON must follow the following format:
     "accounts_info":[
        {
           "action":"ERROR",
-          "account_product":"NOW2",
+          "account_product":"NOW1",
+          "message":"ERROR MESSAGE"
+       },
+	   {
+          "action":"ERROR",
+          "account_product":"NOW3",
           "message":"ERROR MESSAGE"
        }
     ]
