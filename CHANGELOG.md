@@ -12,7 +12,9 @@
 
     * Eliminado el objeto _product_request_type_.
 
-    * Agregado campo _civil_status_unique_description, nickname, other_sex_description_.
+    * Agregado campo _civil_status_unique_description, nickname, other_sex_description, customer_number_.
+
+    * Agregado objeto risk_data para enviar información del cálculo de riesgo de lavado de los clientes.
 
 * Nodo **client_location:**
 
@@ -40,7 +42,7 @@
 
     * En las referencias bancarias se agregaron los campos _canceled, canceled_reason, aba_code, iban_code, swift_code_.
 
-    * En las referencias personales se agregó los campos _country, reference_relationship_unique_description_.
+    * En las referencias personales se agregó los campos _country, reference_relationship_unique_description, reference_relationship_description, reference_relationship_type_description_.
 
     * Se agregaron nuevos nodos: _first_client_commercial_reference, second_client_commercial_reference, first_supplier_commercial_reference, second_supplier_commercial_reference_
 
@@ -55,7 +57,7 @@
 
 * Nodo **company_info:**
 
-    * Agregado los campos _acronym, is_private_entity, is_financial_entity, main_email, url, code_
+    * Agregado los campos _acronym, is_private_entity, is_financial_entity, main_email, url, code, customer_number_
 
 * Nodo **company_main_address:**
 
