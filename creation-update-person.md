@@ -201,6 +201,11 @@ if data.get('client_job_info').get('previously_employment_data'):
       "account_officer":"JCA",
       "business_code":"L003",
       "other_nationality_code":"DO",
+      "risk_data":{
+         "risk_level_unique_description":"low",
+         "risk_value":2.1,
+         "risk_level_description":"Riesgo Bajo"
+      }
       "spouse_info":{
          "document_type_code":"IDEN",
          "first_name":"EMILY",
@@ -379,6 +384,11 @@ if data.get('client_job_info').get('previously_employment_data'):
       "civil_status_id":1,
       "wisenroll_code":"K9ZW56",
       "nickname":"Maria M",
+      "risk_data":{
+         "risk_level_unique_description":"medium",
+         "risk_value":6.05,
+         "risk_level_description":"Riesgo Medio"
+      }
       "additional_field1":"Value1",
       "additional_field2":"Value2",
       "additional_field3":"Value3",
@@ -506,6 +516,11 @@ if data.get('client_job_info').get('previously_employment_data'):
       "wisenroll_code":"LH0KN3",
       "middle_last_name":"TORREALBA",
       "other_nationality_code":"DO",
+      "risk_data":{
+         "risk_level_unique_description":"high",
+         "risk_value":8.25,
+         "risk_level_description":"Riesgo Alto"
+      }
       "spouse_info":{
          "document_type_code":"IDEN",
          "first_name":"ANDREINA",
