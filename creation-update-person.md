@@ -43,6 +43,7 @@ A continuación la descripción de cada campo:
 |                          | middle\_name                      |                               | varchar | 30     | Second name of the customer                                                                                                                                                                                                                                                      |
 |                          | last\_name\*                      |                               | varchar | 30     | Customer's first last name                                                                                                                                                                                                                                                       |
 |                          | middle\_last\_name                |                               | varchar | 30     | Customer's second last name                                                                                                                                                                                                                                                      |
+|                          | customer\_number                  |                               | integer | -      | Customer number assigned by the core of the entity. For new clients this value is not sent in the Json                                                                                                                                                                           |
 |                          | nickname                          |                               | varchar | 100    | Nickname                                                                                                                                                                                                                                                                         |
 |                          | sex\*                             |                               | varchar | 1      | Gender: M (Male) / F (Female) / NB (No Binary) / NC (No Comments) / O (Other)                                                                                                                                                                                                    |
 |                          | other\_sex\_description           |                               | varchar | 50     | When sex = O (Other) the gender indicated by the client is sent                                                                                                                                                                                                                  |
@@ -53,6 +54,10 @@ A continuación la descripción de cada campo:
 |                          | nationality\_code                 |                               | varchar | 2      | Country code of nationality in Alpha-2. Example: DO, IT, CO, etc. Ver Anexo 1                                                                                                                                                                                                    |
 |                          | other\_nationality\_code          |                               | varchar | 2      | Country code of second nationality in Alpha-2                                                                                                                                                                                                                                    |
 |                          | person\_type\_code                |                               | varchar | 10     | Indicates if the person is PEP or RPEP. If not, the value is empty                                                                                                                                                                                                               |
+|                          | risk\_data                        |                               | object  | -      | Laundering risk calculation result information                                                                                                                                                                                                                                   |
+|                          |                                   | risk\_value                   | float   | -      | Risk calculation value                                                                                                                                                                                                                                                           |
+|                          |                                   | risk\_level\_unique\_description | varchar | 25    | Unique description of the washout risk result. Take the values of `low`, `medium` and `high`                                                                                                                                                                                   |
+|                          |                                   | risk\_level\_description      | varchar | 25     | Description of the laundering risk result, example `High Risk`                                                                                                                                                                                                                   |
 |                          | spouse\_info                      | first\_name                   | varchar | 30     | Spouse's first name                                                                                                                                                                                                                                                              |
 |                          |                                   | middle\_name                  | varchar | 30     | Spouse's middle name                                                                                                                                                                                                                                                             |
 |                          |                                   | last\_name                    | varchar | 30     | Spouse's last name                                                                                                                                                                                                                                                               |
@@ -133,7 +138,9 @@ A continuación la descripción de cada campo:
 |                          | second\_bank\_reference           |                               | -       | -      | Same as **first_bank_reference**                                                                                                                                                                                                                                                 |
 |                          | first\_personal\_reference\*      | name                          | varchar | 100    | Full name of the reference                                                                                                                                                                                                                                                       |
 |                          |                                   | relationship                  | varchar | 50     | Indicates if it is Family (Familiar) or Not Family (No Familiar)                                                                                                                                                                                                                 |
-|                          |                                   | reference\_relationship\_unique\_description  | varchar | 50     | Relationship type                                                                                                                                                                                                                                                |
+|                          |                                   | reference\_relationship\_type\_description  | varchar | 50     | Take the values: familiar y unfamiliar                                                                                                                                                                                                                             |
+|                          |                                   | reference\_relationship\_unique\_description  | varchar | 50     | Unique description of the Relationship Type. Example: brother, father, mother, etc.                                                                                                                                                                              |
+|                          |                                   | reference\_relationship\_description  | varchar | 50     | Description of the Type of relationship. Example: Brother, Father, Mother, etc.                                                                                                                                                                                          |
 |                          |                                   | phone                         | varchar | 20     | Reference phone number                                                                                                                                                                                                                                                           |
 |                          |                                   | address                       | varchar | 150    | Home address                                                                                                                                                                                                                                                                     |
 |                          |                                   | document\_number              | varchar | 20     | Document number                                                                                                                                                                                                                                                                  |
@@ -207,6 +214,11 @@ if data.get('client_job_info').get('previously_employment_data'):
       "civil_status_description":"Casado(a)",
       "birth_date":"1991-11-14",
       "civil_status_id":2,
+      "risk_data":{
+         "risk_level_unique_description":"low",
+         "risk_value":2.05,
+         "risk_level_description":"Low Risk"
+      }
    },
    "client_entity_branch":{
       "branch_name":"Branch 01",
@@ -373,6 +385,11 @@ if data.get('client_job_info').get('previously_employment_data'):
       "civil_status_id":1,
       "wisenroll_code":"K9ZW56",
       "nickname":"Maria M",
+      "risk_data":{
+         "risk_level_unique_description":"medium",
+         "risk_value":6.05,
+         "risk_level_description":"Medium Risk"
+      }
       "additional_field1":"Value1",
       "additional_field2":"Value2",
       "additional_field3":"Value3",
@@ -512,6 +529,11 @@ if data.get('client_job_info').get('previously_employment_data'):
          "issuing_country_code":"DO",
          "middle_last_name":"RODRIGUEZ"
       },
+      "risk_data":{
+         "risk_level_unique_description":"high",
+         "risk_value":8.25,
+         "risk_level_description":"High Risk"
+      }
       "additional_field1":"Addition information 1",
       "additional_field2":"Addition information 2",
       "additional_field3":"Addition information 3",

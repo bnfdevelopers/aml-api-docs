@@ -12,7 +12,7 @@
 
     * Removed the _product_request_type_ object.
 
-    * Added field _civil_status_unique_description, nickname, other_sex_description_.
+    * Added field _civil_status_unique_description, nickname, other_sex_description, customer_number_.
 
 * Node **client_location:**
 
@@ -53,7 +53,7 @@
 
 * Node **company_info:**
 
-    * Added fields _acronym, is_private_entity, is_financial_entity, main_email, url, code_.
+    * Added fields _acronym, is_private_entity, is_financial_entity, main_email, url, code, customer_number_.
 
 * Node **company_main_address:**
 
