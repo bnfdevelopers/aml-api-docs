@@ -51,7 +51,6 @@ A continuación la descripción de cada campo:
 |                              | customer\_number                                 |                                   | integer | -      | Número de cliente asignado por el core de la entidad. Para clientes nuevos este valor no es enviada en el Json                                                                                                                                                                   |
 |                              | code                                             |                                   | varchar | 6      | Código de la compañía asignado por la plataforma                                                                                                                                                                                      |
 |                              | main\_language                                   |                                   | varchar | 100    | Idioma de principal uso. Ejemplo: Español, Inglés, etc                                                                                                                                                                                |
-|                              | main\_email                                      |                                   | varchar | 60     | Correo de la empresa                                                                                                                                                                                                                  |
 |                              | url                                              |                                   | varchar | 200    | Página web de la empresa                                                                                                                                                                                                              |
 |                              | company\_category\_unique\_name\*                |                                   | varchar | 100    | Código único que identifica al tipo de sociedad. Por ejemplo: limited\_liability\_partnership. Ver Anexos [aquí](static-data.md)                                                                                                      |
 |                              | company\_category\_description\*                 |                                   | text    | -      | Descripción del tipo de sociedad. Por ejemplo: Sociedad de Responsabilidad Limitada (SRL)                                                                                                                                             |
@@ -73,6 +72,10 @@ A continuación la descripción de cada campo:
 |                              | product\_request\_type                           |                                   | Object  |        | Diccionario que contiene la información referente al tipo de solicitud que se esta realizando. Ver Anexos [aquí](static-data.md)                                                                                                      |
 |                              |                                                  | description                       | varchar | 50     | Descripción del tipo de solicitud.                                                                                                                                                                                                    |
 |                              |                                                  | code                              | varchar | 1      | Código del tipo de solicitud.                                                                                                                                                                                                         |
+| company\_contact             | contact_cell_phone                               |                                   | varchar | 30     | Número de teléfono de contacto celular de la empresa.                                                                                                                                                                                 |
+|                              | phone\_country\_code                             |                                   | varchar | 2      | País del número de teléfono de contacto celular.                                                                                                                                                                                      |
+|                              | phone\_international\_code                       |                                   | varchar | 5      | Código de llamada internacional, ejemplo: +1.                                                                                                                                                                                         |
+|                              | main\_email                                      |                                   | varchar | 60     | Correo de la empresa                                                                                                                                                                                                                  |
 | company\_main\_address       | city\_description\*                              |                                   | varchar | 150    | Ciudad donde se encuentra la sede principal de la empresa.                                                                                                                                                                            |
 |                              | country\_code\*                                  |                                   | varchar | 2      | Código del país                                                                                                                                                                                                                       |
 |                              | country\_name                                    |                                   | varchar | 50     | Nombre del país                                                                                                                                                                                                                       |
@@ -191,7 +194,6 @@ A continuación la descripción de cada campo:
       "main_language":"Español",
       "name":"VASOLY SRL",
       "code":"2GAf13",
-      "main_email":"vasoly@example.com",
       "url": "vasoly.com",
       "registering_entity_country_code":"DO",
       "registering_entity_name":"DGII",
@@ -217,6 +219,12 @@ A continuación la descripción de cada campo:
       "company_properties_owner_phone": "13697741025",
       "company_properties_rent_amount": "3000.00",
       "company_properties_type": "rented",
+   },
+   "company_contact":{
+      "contact_cell_phone":"7861234567",
+      "phone_country_code":"US",
+      "phone_international_code":"+1",
+      "main_email":"vasoly@example.com"
    },
    "company_alternate_accounts":[
       {
@@ -464,7 +472,6 @@ A continuación la descripción de cada campo:
       "economic_activity_description":"Other Activities Related to Real Estate                                                                                                                         ",
       "founding_date":"2009-03-18",
       "main_language":"Ingles",
-      "main_email":"property@example.com",
       "url": "propertycorp.com",
       "name":"Property Company",
       "code":"BG3h43",
@@ -489,6 +496,12 @@ A continuación la descripción de cada campo:
       "locality_description":"MIAMI",
       "locality_code":"33130",
       "postal_code":"33130",
+   },
+   "company_contact":{
+      "contact_cell_phone":"8491234455",
+      "phone_country_code":"DO",
+      "phone_international_code":"+1",
+      "main_email":"property@example.com"
    },
    "company_main_customers":[
       {
@@ -590,7 +603,6 @@ A continuación la descripción de cada campo:
       "is_private_entity":1,
       "document_type_code":"TXID",
       "main_language":"Ingles",
-      "main_email":"synthex@dev.aclaoverseas.com",
       "company_category_description":"Empresa Individual de Responsabilidad Limitada (EIRL)",
       "total_shares":0.0,
       "additional_field1":"Optional 1",
@@ -604,6 +616,12 @@ A continuación la descripción de cada campo:
       "document_issuing_country_code":"US",
       "economic_activity_description":"Space Research and Technology",
       "registry_id":"111000013"
+   },
+   "company_contact":{
+      "contact_cell_phone":"7895521111",
+      "phone_country_code":"US",
+      "phone_international_code":"+1",
+      "main_email":"synthex@dev.aclaoverseas.com"
    },
    "company_main_customers":[
       {

@@ -59,9 +59,13 @@
 
     * Agregado los campos _acronym, is_private_entity, is_financial_entity, main_email, url, code, customer_number_
 
+* Nuevo nodo **company_contact**.
+
 * Nodo **company_main_address:**
 
     * Agregados los campos: _postal_code, country_code, country_description, locality_code, locality_description, company_properties_type, company_properties_owner, company_properties_owner_phone, company_properties_rent_amount_. Los 3 últimos se muestran o no dependiendo si la propiedad es alquilada o propia.
+
+    * Eliminado el campo _mail_email_. Movido a nuevo nodo _company_contact_.
 
 * Node **company_partners:**
 
@@ -74,6 +78,7 @@
 * Node **company_branches:**
 
      * Added the field: _extension_.
+     
 ### CREACIÓN DE PRODUCTO
 
 * Agregado nuevo nodo: _related_client_info_ para indicar los datos de los relacionados o vinculados a una cuenta, dígase co-titulares o beneficiarios.
