@@ -23,6 +23,7 @@ https://{ENTITY_CLIENT_URL}/company_core_customer
 A data structure is provided, under the JSON format. Which is constituted as follows:
 
 * **company\_info:** Main company information such as: name, identification, economic activity, entity where it was registered, etc.
+* **company\_contact:** Company contact information, such as: cell phone and email.
 * **company\_main\_address:** Company headquarters location information.
 * **company\_business\_type:** Information about the type of business the company does.
 * **company\_alternate\_accounts:** List of accounts in other entities owned by the company.
