@@ -745,11 +745,6 @@ A continuación la descripción de cada campo:
 }
 ```
 
-</details>
-```
-
-</details>
-
 ## Responses by the entity
 
 The entity must return, in JSON format, the customer number with the following http status codes:
