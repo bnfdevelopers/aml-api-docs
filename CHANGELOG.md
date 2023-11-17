@@ -55,9 +55,25 @@
 
     * Added fields _acronym, is_private_entity, is_financial_entity, main_email, url, code, customer_number_.
 
+* Added new node **company_contact**.
+
 * Node **company_main_address:**
 
     * Added fields: _postal_code, country_code, country_description, locality_code, locality_description, company_properties_type, company_properties_owner, company_properties_owner_phone, company_properties_rent_amount_. The last three fields are displayed or omitted depending on whether the property is rented or owned.
+
+    * Removed the _mail_email_ field. Moved to new node _company_contact_.
+
+* Node **company_partners:**
+
+     * In person_members added the fields: _birth_date and email_.
+
+* Node **company_treasurers:**
+
+     * Added the fields: _birth_date and email_.
+
+* Node **company_branches:**
+
+     * Added the field: _extension_.
 
 
 ### PRODUCT CREATION
