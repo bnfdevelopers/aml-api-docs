@@ -67,17 +67,17 @@
 
     * Eliminado el campo _mail_email_. Movido a nuevo nodo _company_contact_.
 
-* Node **company_partners:**
+* Nodo **company_partners:**
 
-     * In person_members added the fields: _birth_date and email_.
+    * En person_members se agregaron los campos: _fecha_nacimiento y correo electrónico_.
 
-* Node **company_treasurers:**
+* Nodo **empresa_tesoreros:**
 
-     * Added the fields: _birth_date and email_.
+    * Se agregaron los campos: _fecha_nacimiento y correo electrónico_.
 
-* Node **company_branches:**
+* Nodo **company_branches:**
 
-     * Added the field: _extension_.
+    * Añadido el campo: _extensión_.
      
 ### CREACIÓN DE PRODUCTO
 
