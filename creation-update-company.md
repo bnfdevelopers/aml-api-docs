@@ -23,6 +23,7 @@ https://{URLCLIENTE}/company_core_customer
 Se provee una estructura de datos, bajo el formato JSON. La cual esta constituida de la siguiente forma:
 
 * **company\_info:** Información principal de la compañía tales como: nombre, identificación, actividad económica, entidad donde fue registrada, etc.
+* **company\_contact:** Información de datos de contacto de la empresa, tales como: teléfono y correo electrónico.
 * **company\_main\_address:** Información de la ubicación de la sede principal de la empresa.
 * **company\_business\_type:** Información sobre el tipo de negocio que realiza la empresa.
 * **company\_alternate\_accounts:** Lista de las cuentas en otras entidades que posea la empresa.
