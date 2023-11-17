@@ -751,10 +751,6 @@ A continuación la descripción de cada campo:
 }
 ```
 
-</details>
-```
-
-</details>
 
 ## Respuestas por parte de la entidad
 
