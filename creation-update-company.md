@@ -73,6 +73,10 @@ A continuación la descripción de cada campo:
 |                              | product\_request\_type                           |                                   | Object  |        | Diccionario que contiene la información referente al tipo de solicitud que se esta realizando. Ver Anexos [aquí](static-data.md)                                                                                                      |
 |                              |                                                  | description                       | varchar | 50     | Descripción del tipo de solicitud.                                                                                                                                                                                                    |
 |                              |                                                  | code                              | varchar | 1      | Código del tipo de solicitud.                                                                                                                                                                                                         |
+|                              | risk\_data                                       |                                   | Object  |        | Diccionario que contiene la información referente al nivel de riesgo de lavado de la empresa.                                                                                                                                         |
+|                              |                                                  | risk\_value                       | float   | -      | Valor de riesgo de lavado.                                                                                                                                                                                                            |
+|                              |                                                  | risk\_level                       | varchar | 30     | Descripción del nivel de riesgo.                                                                                                                                                                                                      |
+|                              |                                                  | risk\_level\_unique\_description  | varchar | 10     | Descripción única del nivel de riesgo.                                                                                                                                                                                                |
 | company\_contact             | contact_cell_phone                               |                                   | varchar | 30     | Número de teléfono de contacto celular de la empresa.                                                                                                                                                                                 |
 |                              | phone\_country\_code                             |                                   | varchar | 2      | País del número de teléfono de contacto celular.                                                                                                                                                                                      |
 |                              | phone\_international\_code                       |                                   | varchar | 5      | Código de llamada internacional, ejemplo: +1.                                                                                                                                                                                         |
@@ -204,7 +208,12 @@ A continuación la descripción de cada campo:
       "product_request_type":{
          "description":"Solicitud de Producto",
          "code":"product_request"
-      }
+      },
+      "risk_data":{
+         "risk_level_unique_description":"medium",
+         "risk_level":"Riesgo Medio",
+         "risk_value":"7.00"
+      },
    },
    "company_main_address":{
       "city_description":"Santo Domingo",
@@ -482,6 +491,11 @@ A continuación la descripción de cada campo:
          "code":"product_request",
          "description":"Solicitud de Producto"
       },
+      "risk_data":{
+         "risk_level_unique_description":"low",
+         "risk_level":"Riesgo Bajo",
+         "risk_value":"2.50"
+      },
       "registering_entity_country_code":"DO",
       "registering_entity_name":"Dirección General de Impuestos Internos",
       "registry_id":"122121121",
@@ -616,7 +630,12 @@ A continuación la descripción de cada campo:
       "url":"synthex.com",
       "document_issuing_country_code":"US",
       "economic_activity_description":"Space Research and Technology",
-      "registry_id":"111000013"
+      "registry_id":"111000013",
+      "risk_data":{
+         "risk_level_unique_description":"high",
+         "risk_level":"Riesgo Alto",
+         "risk_value":"9.25"
+      },
    },
    "company_contact":{
       "contact_cell_phone":"7895521111",

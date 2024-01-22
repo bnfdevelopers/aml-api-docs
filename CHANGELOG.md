@@ -57,7 +57,7 @@
 
 * Nodo **company_info:**
 
-    * Agregado los campos _acronym, is_private_entity, is_financial_entity, main_email, url, code, customer_number_
+    * Agregado los campos _acronym, is_private_entity, is_financial_entity, main_email, url, code, customer_number, risk_data_
 
 * Nuevo nodo **company_contact**.
 
