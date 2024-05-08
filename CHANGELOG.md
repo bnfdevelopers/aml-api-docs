@@ -24,6 +24,8 @@
 
     * Eliminado los campos: _fax_.
 
+    * Agregados los campos: _cell_phone_country, cell_phone_country_code, other_phones (lista de objetos)_.
+
 * Nodo **client_job_info:**
 
     * Agregados los campos: _company_code, annual_gross_salary, entry_date, professional_position, work_email, company_country_code, company_country_description, country_description (en other_job_info)_.

@@ -71,7 +71,7 @@ A continuación la descripción de cada campo:
 |                          | additional\_field1                |                               | varchar | 150    | Campo opcional para almacenar lo que indique el cliente. Este campo solo se agrega en la estructura si es un valor válido. Es decir, sólo se agregará en el JSON si existe valor, de lo contrario no.                                                                            |
 |                          | additional\_field2                |                               | varchar | 150    | Campo opcional para almacenar lo que indique el cliente. Este campo solo se agrega en la estructura si es un valor válido.Es decir, sólo se agregará en el JSON si existe valor, de lo contrario no.                                                                             |
 |                          | additional\_field3                |                               | varchar | 150    | Campo opcional para almacenar lo que indique el cliente. Este campo solo se agrega en la estructura si es un valor válido. Es decir, sólo se agregará en el JSON si existe valor, de lo contrario no.                                                                            |
-| client\_documents        |                                   |                               | Array   |        | Listado de diccionarios de los documentos de identificación de clientes                                                                                                                                                                                                          |
+| client\_documents        |                                   |                               | array   |        | Listado de diccionarios de los documentos de identificación de clientes                                                                                                                                                                                                          |
 |                          | document\_number\*                |                               | varchar | 20     | Número de documento                                                                                                                                                                                                                                                              |
 |                          | document\_type\_code\*            |                               | varchar | 20     | Tipo de documento. Revisar los valores en la sección de [anexos](static-data.md)                                                                                                                                                                                                 |
 |                          | issuing\_country\_code\*          |                               | varchar | 2      | País emisor del documento en Alpha-2                                                                                                                                                                                                                                             |
@@ -93,7 +93,14 @@ A continuación la descripción de cada campo:
 |                          | province\_code                    |                               | varchar | 10     | Código de la provincia. Ver Anexos [aquí](static-data.md). Tendrá algún valor para direcciones de República Dominicana                                                                                                                                                           |
 |                          | province\_description             |                               | varchar | 70     | Nombre de la provincia                                                                                                                                                                                                                                                           |
 | client\_contact          | email\*                           |                               | varchar | 50     | Correo electrónico                                                                                                                                                                                                                                                               |
-|                          | cell\_phone\*                     |                               | varchar | 20     | Número de teléfono celular                                                                                                                                                                                                                                                       |
+|                          | cell\_phone\*                     |                               | varchar | 20     | Número de teléfono celular principal                                                                                                                                                                                                                                             |
+|                          | cell\_phone\_country\_code*       |                               | varchar | 2      | Código de país en Alpha-2 del teléfono celular                                                                                                                                                                                                                                   |
+|                          | cell\_phone\_country              |                               | varchar | 50     | País del teléfono celular                                                                                                                                                                                                                                                        |
+|                          | other\_phones                     |                               | array   | -      | Lista de objetos con información de teléfonos adicionales                                                                                                                                                                                                                       |
+|                          |                                   | contact\_type\_unique\_description | varchar   | 45     | Descripción única del tipo de contacto. Ejemplo: cellphone                                                                                                                                                                                                                |
+|                          |                                   | contact\_type                 | varchar | 45     | Descripción del tipo de contacto. Ejemplo: Celular                                                                                                                                                                                                                               |
+|                          |                                   | description                   | varchar | 30     | Número de teléfono                                                                                                                                                                                                                                                               |
+|                          |                                   | country\_code                 | varchar | 45     | Código de país en Alpha-2 del teléfono                                                                                                                                                                                                                                           |
 |                          | home\_phone                       |                               | varchar | 20     | Número de teléfono de casa                                                                                                                                                                                                                                                       |
 |                          | buss\_phone                       |                               | varchar | 20     | Número de teléfono de oficina                                                                                                                                                                                                                                                    |
 |                          | social\_network\_name             |                               | varchar | 45     | Nombre de red social                                                                                                                                                                                                                                                             |
@@ -350,11 +357,27 @@ if data.get('client_job_info').get('previously_employment_data'):
       }
    },
    "client_contact":{
+      "email":"aauser07@dev.aclaoverseas.com",
       "buss_phone":"7861111121",
       "social_network_name":"Instagram",
       "social_network_username":"luismart01",
       "cell_phone":"7862229999",
-      "email":"aauser07@dev.aclaoverseas.com"
+      "cell_phone_country": "Estados Unidos",
+      "cell_phone_country_code": "US",
+      "other_phones": [
+         {
+            "contact_type_unique_description": "cellphone",
+            "description": "8499998888",
+            "country_code": "DO",
+            "contact_type": "Celular"
+         },
+         {
+            "contact_type_unique_description": "cellphone",
+            "description": "7860002211",
+            "country_code": "US",
+            "contact_type": "Celular"
+         }
+      ],
    }
 }
 ```
@@ -488,9 +511,11 @@ if data.get('client_job_info').get('previously_employment_data'):
    },
    "client_contact":{
       "social_network_username":"mariam18",
-      "cell_phone":"7891231100",
       "email":"aauser08@dev.aclaoverseas.com",
-      "social_network_name":"Instagram"
+      "social_network_name":"Instagram",
+      "cell_phone":"7891231100",
+      "cell_phone_country": "Estados Unidos",
+      "cell_phone_country_code": "US"
    }
 }
 ```
@@ -580,9 +605,25 @@ if data.get('client_job_info').get('previously_employment_data'):
    },
    "client_contact":{
       "social_network_username":"david10",
-      "cell_phone":"8291230010",
       "email":"aauser10@dev.aclaoverseas.com",
-      "social_network_name":"Twitter"
+      "social_network_name":"Twitter",
+      "cell_phone":"8291230010",
+      "cell_phone_country": "República Dominicana",
+      "cell_phone_country_code": "DO",
+      "other_phones": [
+         {
+            "contact_type_unique_description": "cellphone",
+            "contact_type": "Celular",
+            "description": "8495643433",
+            "country_code": "DO"
+         },
+         {
+            "contact_type_unique_description": "cellphone",
+            "contact_type": "Celular",
+            "description": "84960002211",
+            "country_code": "DO",
+         }
+      ],
    },
    "client_references":{
       "first_bank_reference":{
