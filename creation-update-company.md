@@ -32,6 +32,7 @@ A data structure is provided, under the JSON format. Which is constituted as fol
 * **company\_suppliers:** List of the company's main suppliers.
 * **company\_main\_customers:** List of the company's main customers.
 * **company\_transactionality:** Information on the estimated transactionality that the company will have within the entity.
+* **company\_authorized\_representatives:** List containing the information of the people authorized to act on behalf of the company.
 * **company\_managers:** List containing the information of senior management representatives. Here can be the information of the president, directors and managers.
 * **company\_treasures:** A list containing the information of those responsible for the company's finances.
 * **company\_entity\_branch:** Information about the branch of the entity where the company is registering.
@@ -134,13 +135,22 @@ A continuación la descripción de cada campo:
 |                              | responsible\_name\*                              |                                   | varchar | 100    | Name of a person responsible for the branch.                                                                                                                                                                                          |
 |                              | neighbourhood\_description                       |                                   | varchar | 150    | Sector where the branch is located.                                                                                                                                                                                                   |
 |                              | description\*                                    |                                   | varchar | 200    | Address where the branch is located.                                                                                                                                                                                                  |
+| company\_authorized\_representatives | first\_name                              |                                   | varchar | 50     | First name.                                                                                                                                                                                                                           |
+|                              | middle\_name                                     |                                   | varchar | 50     | Second name in case the person has. Otherwise, this information does not come.                                                                                                                                                        |
+|                              | last\_name                                       |                                   | varchar | 50     | Surname.                                                                                                                                                                                                                              |
+|                              | middle\_last\_name                               |                                   | varchar | 50     | Second last name in case the person has. Otherwise, this information does not come.                                                                                                                                                   |
+|                              | document\_number                                 |                                   | varchar | 20     | Document number.                                                                                                                                                                                                                      |
+|                              | document\_issuing\_country\_code                 |                                   | varchar | 2      | Country issuing document in Alpha2.                                                                                                                                                                                                   |
+|                              | document\_type\_code                             |                                   | varchar | 10     | Document type. Example: IDEN, PAOR, etc.                                                                                                                                                                                              |
+|                              | wisenroll\_code                                  |                                   | varchar | 6      | Wisenroll Code.                                                                                                                                                                                                                       |
+|                              | customer\_number                                 |                                   | integer | -      | Customer number.                                                                                                                                                                                                                      |
 | company\_managers            | first\_name                                      |                                   | varchar | 50     | First name.                                                                                                                                                                                                                           |
 |                              | middle\_name                                     |                                   | varchar | 50     | Second name in case the person has. Otherwise, this information does not come.                                                                                                                                                        |
 |                              | last\_name                                       |                                   | varchar | 50     | Surname.                                                                                                                                                                                                                              |
 |                              | middle\_last\_name                               |                                   | varchar | 50     | Second last name in case the person has. Otherwise, this information does not come.                                                                                                                                                   |
 |                              | document\_number                                 |                                   | varchar | 20     | Document number.                                                                                                                                                                                                                      |
 |                              | document\_issuing\_country\_code                 |                                   | varchar | 2      | Country issuing document in Alpha2.                                                                                                                                                                                                   |
-|                              | document\_type\_code                             |                                   | varchar | 10     | Document type. Example: ide, PAOR, etc.                                                                                                                                                                                               |
+|                              | document\_type\_code                             |                                   | varchar | 10     | Document type. Example: IDEN, PAOR, etc.                                                                                                                                                                                              |
 |                              | gender                                           |                                   | varchar | 1      | Gender. Example: M, F, NB, NC, O.                                                                                                                                                                                                     |
 |                              | birth\_date                                      |                                   | date    | -      | Birthdate. Format YYYY-MM-DD                                                                                                                                                                                                          |
 |                              | email                                            |                                   | varchar | 50     | Email                                                                                                                                                                                                                                 |
@@ -341,6 +351,17 @@ A continuación la descripción de cada campo:
          "supplier_description":"Innovix Technologies"
       }
    ],
+   "company_authorized_representatives":[
+      {
+         "document_type_code":"IDEN",
+         "first_name":"JOE",
+         "last_name":"DOE",
+         "document_number":"1234567890",
+         "customer_number":316,
+         "document_issuing_country_code":"DO",
+         "wisenroll_code":"N0RAZ9"
+      }
+   ],
    "company_managers":[
       {
          "document_type_code":"SSN",
@@ -444,6 +465,17 @@ A continuación la descripción de cada campo:
          "consumed_product_description":"Real Estate and Rental and Leasing",
          "main_customer_country_code":"US",
          "main_customer_description":"ACB Company SRL"
+      }
+   ],
+   "company_authorized_representatives":[
+      {
+         "document_type_code":"IDEN",
+         "first_name":"ANA",
+         "last_name":"LOPEZ",
+         "document_number":"1234567890",
+         "customer_number":123,
+         "document_issuing_country_code":"DO",
+         "wisenroll_code":"NRV9E"
       }
    ],
    "company_managers":[
@@ -642,6 +674,17 @@ A continuación la descripción de cada campo:
          "phone_number":"948406632",
          "extension":789852,
          "responsible_name":"Andres Rodriguez"
+      }
+   ],
+   "company_authorized_representatives":[
+      {
+         "document_type_code":"IDEN",
+         "first_name":"JOE",
+         "last_name":"DOE",
+         "document_number":"1234567890",
+         "customer_number":316,
+         "document_issuing_country_code":"DO",
+         "wisenroll_code":"N0RAZ9"
       }
    ],
    "company_managers":[

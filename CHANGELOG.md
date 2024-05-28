@@ -59,6 +59,8 @@
 
 * Added new node **company_contact**.
 
+* Added new node **company_authorized_representatives**.
+
 * Node **company_main_address:**
 
     * Added fields: _postal_code, country_code, country_description, locality_code, locality_description, company_properties_type, company_properties_owner, company_properties_owner_phone, company_properties_rent_amount_. The last three fields are displayed or omitted depending on whether the property is rented or owned.
