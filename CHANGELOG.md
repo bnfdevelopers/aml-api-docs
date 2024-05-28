@@ -63,6 +63,8 @@
 
 * Nuevo nodo **company_contact**.
 
+* Nuevo nodo **company_authorized_representatives**.
+
 * Nodo **company_main_address:**
 
     * Agregados los campos: _postal_code, country_code, country_description, locality_code, locality_description, company_properties_type, company_properties_owner, company_properties_owner_phone, company_properties_rent_amount_. Los 3 últimos se muestran o no dependiendo si la propiedad es alquilada o propia.

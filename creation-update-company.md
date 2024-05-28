@@ -32,6 +32,7 @@ Se provee una estructura de datos, bajo el formato JSON. La cual esta constituid
 * **company\_suppliers:** Lista de los principales proveedores de la empresa.
 * **company\_main\_customers:** Listado de los principales clientes de la empresa.
 * **company\_transactionality:** Información de la transaccionalidad estimada que tendrá la compañía dentro de la entidad.
+* **company\_authorized\_representatives:** Lista que contiene la información de las personas autorizadas para actuar en nombre de la compañía.
 * **company\_managers:** Lista que contiene la información de los representantes de la alta gerencia. Acá puede estar la información del presidente, directores y gerentes.
 * **company\_treasures:** Lista que contiene la información de los responsables de las finanzas de la empresa.
 * **company\_entity\_branch:** Información de la sucursal de la entidad donde la empresa se está registrando.
@@ -134,13 +135,22 @@ A continuación la descripción de cada campo:
 |                              | responsible\_name\*                              |                                   | varchar | 100    | Nombre de una persona responsable de la sucursal.                                                                                                                                                                                     |
 |                              | neighbourhood\_description                       |                                   | varchar | 150    | Sector donde se encuentra ubicada la sucursal.                                                                                                                                                                                        |
 |                              | description\*                                    |                                   | varchar | 200    | Dirección donde se encuentra ubicada la sucursal.                                                                                                                                                                                     |
+| company\_authorized\_representatives | first\_name                              |                                   | varchar | 50     | Primer nombre.                                                                                                                                                                                                                        |
+|                              | middle\_name                                     |                                   | varchar | 50     | Segundo nombre en caso de que la persona posea. De lo contrario, no viene esta información.                                                                                                                                           |
+|                              | last\_name                                       |                                   | varchar | 50     | Primer apellido.                                                                                                                                                                                                                      |
+|                              | middle\_last\_name                               |                                   | varchar | 50     | Segundo apellido en caso de que la persona posea. De lo contrario, no viene esta información.                                                                                                                                         |
+|                              | document\_number                                 |                                   | varchar | 20     | Número de documento.                                                                                                                                                                                                                  |
+|                              | document\_issuing\_country\_code                 |                                   | varchar | 2      | País emisor de documento en Alpha2.                                                                                                                                                                                                   |
+|                              | document\_type\_code                             |                                   | varchar | 10     | Tipo de documento. Ejemplo: IDEN, PAOR, etc                                                                                                                                                                                            |
+|                              | wisenroll\_code                                  |                                   | varchar | 6      | Código Wisenroll.                                                                                                                                                                                                                     |
+|                              | customer\_number                                 |                                   | integer | -      | Número de cliente.                                                                                                                                                                                                                    |
 | company\_managers            | first\_name                                      |                                   | varchar | 50     | Primer nombre.                                                                                                                                                                                                                        |
 |                              | middle\_name                                     |                                   | varchar | 50     | Segundo nombre en caso de que la persona posea. De lo contrario, no viene esta información.                                                                                                                                           |
 |                              | last\_name                                       |                                   | varchar | 50     | Primer apellido.                                                                                                                                                                                                                      |
 |                              | middle\_last\_name                               |                                   | varchar | 50     | Segundo apellido en caso de que la persona posea. De lo contrario, no viene esta información.                                                                                                                                         |
 |                              | document\_number                                 |                                   | varchar | 20     | Número de documento.                                                                                                                                                                                                                  |
 |                              | document\_issuing\_country\_code                 |                                   | varchar | 2      | País emisor de documento en Alpha2.                                                                                                                                                                                                   |
-|                              | document\_type\_code                             |                                   | varchar | 10     | Tipo de documento. Ejemplo: ide, PAOR, etc                                                                                                                                                                                            |
+|                              | document\_type\_code                             |                                   | varchar | 10     | Tipo de documento. Ejemplo: IDEN, PAOR, etc                                                                                                                                                                                            |
 |                              | gender                                           |                                   | varchar | 1      | Género. Ejemplo: M, F, NB, NC, O.                                                                                                                                                                                                     |
 |                              | birth\_date                                      |                                   | date    | -      | Fecha de Nacimiento. Formato YYYY-MM-DD                                                                                                                                                                                               |
 |                              | email                                            |                                   | varchar | 50     | Correo electrónico                                                                                                                                                                                                                    |
@@ -308,6 +318,17 @@ A continuación la descripción de cada campo:
          "phone_number":"948406632",
          "extension":789852,
          "responsible_name":"Andres Morales"
+      }
+   ],
+   "company_authorized_representatives":[
+      {
+         "document_type_code":"IDEN",
+         "first_name":"JOE",
+         "last_name":"DOE",
+         "document_number":"1234567890",
+         "customer_number":316,
+         "document_issuing_country_code":"DO",
+         "wisenroll_code":"N0RAZ9"
       }
    ],
    "company_managers":[
@@ -523,6 +544,17 @@ A continuación la descripción de cada campo:
          "consumed_product_description":"Real Estate and Rental and Leasing",
          "main_customer_country_code":"US",
          "main_customer_description":"ACB Company SRL"
+      }
+   ],
+   "company_authorized_representatives":[
+      {
+         "document_type_code":"IDEN",
+         "first_name":"ANA",
+         "last_name":"LOPEZ",
+         "document_number":"1234567890",
+         "customer_number":123,
+         "document_issuing_country_code":"DO",
+         "wisenroll_code":"NRV9E"
       }
    ],
    "company_managers":[
@@ -752,6 +784,17 @@ A continuación la descripción de cada campo:
          "supplier_country_code":"US",
          "supplied_product_description":"Professional, Scientific, and Technical Services",
          "supplier_description":"Innovix Technologies"
+      }
+   ],
+   "company_authorized_representatives":[
+      {
+         "document_type_code":"IDEN",
+         "first_name":"JOE",
+         "last_name":"DOE",
+         "document_number":"1234567890",
+         "customer_number":316,
+         "document_issuing_country_code":"DO",
+         "wisenroll_code":"N0RAZ9"
       }
    ],
    "company_managers":[
